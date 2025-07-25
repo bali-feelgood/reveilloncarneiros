@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,9 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Réveillon Carneiros - Born to be Real. Uma experiência transformadora de 8 dias em Praia dos Carneiros, Pernambuco. 26 dezembro a 02 janeiro.">
+        content="Réveillon Carneiros - Born to be Real. An 8-day transformative experience in Praia dos Carneiros, Brazil. December 26 to January 2.">
     <meta name="keywords"
-        content="réveillon carneiros, praia dos carneiros, festa ano novo, pernambuco, born to be real">
+        content="new years eve brazil, carneiros beach, praia dos carneiros, pernambuco, born to be real, brazilian nye">
     <meta name="author" content="Réveillon Carneiros">
     <meta name="robots" content="index, follow">
 
@@ -18,14 +18,14 @@
     <meta property="og:url" content="https://reveilloncarneiros.com/">
     <meta property="og:title" content="Réveillon Carneiros | Born to be Real">
     <meta property="og:description"
-        content="Uma jornada de transformação e celebração onde o tempo pausa para o que realmente importa.">
+        content="A journey of transformation and celebration where time pauses for what truly matters.">
     <meta property="og:image" content="https://reveilloncarneiros.com/assets/images/og-image.jpg">
-
+    
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://reveilloncarneiros.com/">
     <meta property="twitter:title" content="Réveillon Carneiros | Born to be Real">
-    <meta property="twitter:description" content="Uma jornada de transformação e celebração. 26 dezembro a 02 janeiro.">
+    <meta property="twitter:description" content="A journey of transformation and celebration. December 26 to January 2.">
     <meta property="twitter:image" content="https://reveilloncarneiros.com/assets/images/twitter-image.jpg">
 
     <title>Réveillon Carneiros | Born to be Real - Praia dos Carneiros</title>
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Event",
         "name": "Réveillon Carneiros 2026 - Born to be Real",
-        "description": "Uma experiência transformadora de 8 dias em Praia dos Carneiros, Pernambuco. Uma jornada de transformação e celebração onde o tempo pausa para o que realmente importa.",
+        "description": "An 8-day transformative experience in Praia dos Carneiros, Brazil. A journey of transformation and celebration where time pauses for what truly matters.",
         "startDate": "2025-12-26T00:00:00-03:00",
         "endDate": "2026-01-02T23:59:59-03:00",
         "eventStatus": "https://schema.org/EventScheduled",
@@ -87,22 +87,22 @@
             {
                 "@type": "Event",
                 "name": "AURA - Night Celebration",
-                "description": "A dança invisível das energias"
+                "description": "The invisible dance of energies"
             },
             {
                 "@type": "Event", 
                 "name": "LUAU - Night Celebration",
-                "description": "Conexão ancestral com a natureza"
+                "description": "Ancestral connection with nature"
             },
             {
                 "@type": "Event",
                 "name": "AQUA - Night Celebration", 
-                "description": "Fluidez e renovação"
+                "description": "Flow and renewal"
             },
             {
                 "@type": "Event",
                 "name": "ASTRAL - Night Celebration",
-                "description": "Transcendência e infinito"
+                "description": "Transcendence and infinity"
             }
         ]
     }
@@ -115,7 +115,7 @@
         "name": "Réveillon Carneiros",
         "url": "https://reveilloncarneiros.com",
         "logo": "https://reveilloncarneiros.com/assets/images/logo-carneiros.svg",
-        "description": "Organizadora do maior réveillon de Pernambuco em Praia dos Carneiros",
+        "description": "Organizer of the biggest New Year's celebration in Pernambuco at Praia dos Carneiros",
         "founder": {
             "@type": "Person",
             "name": "Réveillon Carneiros Team"
@@ -147,52 +147,461 @@
     <meta name="msapplication-TileColor" content="#6B7A44">
     <meta name="msapplication-config" content="/browserconfig.xml">
 
-
     <!-- Preconnect to External Domains -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-    <!-- Preload de recursos críticos -->
-    <link rel="preload" href="/assets/fonts/Amagro-bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/SFProDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/images/hero/hero-background-768.webp" as="image" type="image/webp" media="(max-width: 768px)">
-    <link rel="preload" href="css/fonts.css" as="style">
-    <link rel="preload" href="css/main.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style">
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-
-    <!-- Preloader Styles -->
+    <!-- Critical CSS Inline Expandido -->
     <style>
-        /* Minimal Preloader */
-        #preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#6B7A44 0%,#848547 100%);z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity 1s ease-out;opacity:1}
-        #preloader.fade-out{opacity:0}
-        .preloader-content{text-align:center;display:flex;flex-direction:column;align-items:center;gap:3rem}
-        .preloader-logo{width:80px;height:auto;opacity:0.9;color:white;animation:logoFloat 6s ease-in-out infinite}
-        .preloader-progress{width:120px;height:2px;background:rgba(255,255,255,0.15);border-radius:1px;overflow:hidden;position:relative}
-        .preloader-progress::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,0.8);border-radius:1px;animation:progressMove 2.5s ease-in-out infinite}
-        @keyframes logoFloat{0%,100%{transform:translateY(0);opacity:0.9}50%{transform:translateY(-3px);opacity:1}}
-        @keyframes progressMove{0%{left:-100%}100%{left:100%}}
+        /* Reset crítico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        /* Variáveis críticas */
+        :root {
+            --color-sand: #EEE8E3;
+            --color-earth: #848547;
+            --color-charcoal: #1F1F1F;
+            --color-white: #FFFFFF;
+            --font-primary: 'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-secondary: 'Amagro', 'EB Garamond', serif
+        }
+
+        /* Base */
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--color-charcoal);
+            background: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden
+        }
+
+        /* Hero essencial para evitar CLS */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: #000
+        }
+
+        .hero-content {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: var(--color-white);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            z-index: 1
+        }
+
+        .hero-title {
+            font-family: var(--font-secondary);
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+            text-transform: uppercase
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            opacity: 0.9
+        }
+
+        /* Header crítico */
+        .header-habitas {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1050;
+            transition: all 0.5s
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem
+        }
+
+        .logo {
+            height: 45px
+        }
+
+        .logo-svg {
+            height: 45px;
+            width: 45px;
+            fill: #fff
+        }
+
+
+        /* Font-face crítico */
+        @font-face {
+            font-family: 'Amagro';
+            src: url('/assets/fonts/Amagro-bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap
+        }
+
+        @font-face {
+            font-family: 'SF Pro Display';
+            src: url('/assets/fonts/SFProDisplay-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap
+        }
+
+        /* Anti-CLS - Define tamanhos para prevenir layout shift */
+        .experience-card {
+            aspect-ratio: 4/5
+        }
+
+        .experience-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .mouton-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .destination-slide {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .artist-slide {
+            width: 410px;
+            height: 530px
+        }
+
+        img.lazyload {
+            background: #f0f0f0
+        }
+
+        /* Container crítico */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        /* Manifesto essencial */
+        .manifesto-section {
+            background: var(--color-sand);
+            padding: 8rem 0
+        }
+
+        .manifesto-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-earth);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.85
+        }
+
+        .manifesto-title {
+            font-family: var(--font-secondary);
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: var(--color-charcoal)
+        }
+
+        .manifesto-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--color-charcoal);
+            opacity: 0.9
+        }
+
+        /* Experience cards estruturais */
+        .experiences-section {
+            padding: 8rem 0;
+            background: var(--color-white)
+        }
+
+        .experiences-grid {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 2rem 0
+        }
+
+        .experience-card {
+            position: relative;
+            overflow: hidden;
+            scroll-snap-align: center;
+            cursor: pointer;
+            background: #000;
+            min-width: 300px;
+            flex: 0 0 auto
+        }
+
+        .experience-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+            color: var(--color-white)
+        }
+
+        /* Mobile critical */
+        @media (max-width:768px) {
+            .hero-title {
+                font-size: 2rem
+            }
+
+            .hero-subtitle {
+                font-size: 1rem
+            }
+
+            .header-container {
+                padding: 1rem 1.5rem
+            }
+
+            .logo-svg {
+                height: 38px;
+                width: 38px
+            }
+
+            .manifesto-section {
+                padding: 4rem 0
+            }
+
+            .manifesto-content {
+                padding: 0 1.5rem
+            }
+
+            .manifesto-title {
+                font-size: 1.75rem;
+                line-height: 1.3;
+                margin-bottom: 1.5rem
+            }
+
+            .manifesto-text {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                margin-bottom: 1.5rem
+            }
+
+            .experiences-section {
+                padding: 4rem 0
+            }
+
+            .experience-card {
+                min-width: 80vw
+            }
+        }
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin-left: 1rem;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .current-flag {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            right: 0;
+            background: rgba(31, 31, 31, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            min-width: 140px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .language-selector:hover .lang-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .lang-option:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .lang-option.active {
+            background: rgba(255,255,255,0.05);
+            pointer-events: none;
+        }
+
+        .lang-option img {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .language-selector {
+                margin-left: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .lang-toggle {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .lang-dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                margin-top: 0.5rem;
+                display: none;
+            }
+            
+            .language-selector.active .lang-dropdown {
+                display: block;
+            }
+        }
+    </style>
+
+    <!-- Preload de recursos críticos com prioridade -->
+    <link rel="preload" href="../assets/fonts/Amagro-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/SFProDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/images/hero/hero-background-768.webp" as="image" type="image/webp" media="(max-width: 768px)">
+
+    <!-- CSS Files com carregamento assíncrono -->
+    <link rel="preload" href="../css/fonts.css" as="style">
+    <link rel="preload" href="../css/main.css" as="style">
+    <link rel="stylesheet" href="../css/fonts.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="../css/main.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../css/main.css">
+    </noscript>
+
+    <!-- External CSS com carregamento assíncrono -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    </noscript>
+    
+    <style>
+/* Language Selector */
+.language-selector{position:relative;margin-left:0.75rem}
+.lang-toggle{display:flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:20px;color:white;cursor:pointer;transition:all 0.25s ease;font-size:0.8rem;font-weight:400;letter-spacing:0.02em;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.lang-toggle:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.25);transform:translateY(-1px)}
+.current-flag{width:16px;height:12px;object-fit:cover;border-radius:1px;box-shadow:0 1px 2px rgba(0,0,0,0.15)}
+.lang-dropdown{position:absolute;top:calc(100% + 0.4rem);right:0;background:rgba(20,20,20,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);border-radius:6px;min-width:120px;opacity:0;visibility:hidden;transform:translateY(-8px) scale(0.95);transition:all 0.25s cubic-bezier(0.4,0,0.2,1);overflow:hidden;z-index:1001;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+.language-selector:hover .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.lang-option{display:flex;align-items:center;gap:0.6rem;padding:0.6rem 0.8rem;color:rgba(255,255,255,0.9);text-decoration:none;transition:all 0.2s ease;font-size:0.8rem;font-weight:400}
+.lang-option:hover{background:rgba(255,255,255,0.08);color:white}
+.lang-option.active{background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.6);pointer-events:none}
+.lang-option img{width:16px;height:12px;object-fit:cover;border-radius:1px;box-shadow:0 1px 2px rgba(0,0,0,0.15)}
+/* Mobile Menu Refinements */
+@media(max-width:768px){
+.language-selector{margin-left:0;margin-bottom:0.6rem}
+.lang-toggle{justify-content:center;width:100%;padding:0.45rem 1rem;font-size:0.8rem}
+.lang-dropdown{position:static;opacity:1;visibility:visible;transform:none;margin-top:0.3rem;display:none;border-radius:4px}
+.language-selector.active .lang-dropdown{display:block}
+.lang-option{padding:0.6rem 1rem;font-size:0.8rem}
+
+/* Mobile Menu Header Improvements */
+.header-container{padding:0.8rem 1.2rem}
+.mobile-menu-toggle{padding:0.4rem;width:40px;height:40px}
+.mobile-menu-toggle span{width:20px;height:1.5px;margin:4px auto}
+.nav-menu{background:linear-gradient(135deg,rgba(107,122,68,0.98) 0%,rgba(132,133,71,0.95) 100%);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);padding:3.5rem 1.8rem 2.5rem;gap:0.2rem;justify-content:flex-start;overflow-y:auto;max-height:100vh}
+.nav-menu li{margin-bottom:0.3rem}
+.nav-link{font-size:1.1rem;padding:0.6rem 1rem;border-radius:6px}
+.nav-menu .dropdown-toggle{padding:0.6rem 1.8rem;font-size:1rem;border-radius:25px;margin-top:0.5rem}
+.nav-menu .dropdown-menu{position:static;opacity:1;visibility:visible;max-height:none;margin-top:0.6rem;width:80%;max-width:220px;border-radius:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2)}
+.nav-menu .dropdown-menu a{padding:0.7rem 1rem;font-size:0.9rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+.nav-menu .dropdown-menu a:last-child{border-bottom:none}
+}
     </style>
 </head>
 
+
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="preloader-content">
-            <svg class="preloader-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280.83 291.53" aria-hidden="true">
-                <path fill="currentColor" d="M139.09,7.91c13.69,0,25.49,14.68,38.58,18.76,13.02,4.06,31.2-1.41,42.56,6.65,10.96,7.78,11.87,26.62,20.32,37.99,8.45,11.37,26.24,17.66,30.53,30.39,4.45,13.2-6.02,29.04-5.88,42.67.14,13.77,10.9,29.38,6.8,42.54-4.06,13.02-21.74,19.74-29.8,31.09-7.78,10.96-8.16,29.93-19.52,38.38-11.37,8.45-29.64,3.35-42.38,7.64-13.2,4.45-24.72,19.45-38.36,19.59-.07,0-.13,0-.19,0-13.69,0-25.49-14.68-38.58-18.76-13.02-4.06-31.2,1.41-42.56-6.65-10.96-7.78-11.86-26.62-20.32-37.99-8.45-11.37-26.24-17.66-30.53-30.39-4.45-13.2,6.02-29.03,5.88-42.67-.14-13.77-10.9-29.38-6.8-42.54,4.06-13.02,21.73-19.74,29.8-31.09,7.78-10.96,8.16-29.93,19.52-38.38,11.37-8.45,29.64-3.35,42.38-7.65,13.2-4.45,24.72-19.44,38.36-19.58h.19M139.09,0c-.09,0-.18,0-.28,0-10.41.11-19.18,6.32-26.91,11.8-4.87,3.45-9.48,6.71-13.89,8.2-4.11,1.38-9.55,1.55-15.31,1.71-9.64.28-20.56.61-29.26,7.08-8.7,6.47-12.16,16.84-15.2,25.99-1.82,5.47-3.54,10.63-6.05,14.16-2.7,3.8-7.15,7.27-11.86,10.94-7.47,5.83-15.94,12.43-19.04,22.38-3.13,10.04.1,20.33,2.95,29.42,1.77,5.65,3.45,10.99,3.5,15.55.05,4.47-1.51,9.78-3.15,15.4-2.69,9.2-5.73,19.62-2.32,29.72,3.27,9.7,11.44,15.78,19.34,21.67,4.87,3.63,9.47,7.05,12.34,10.92,2.87,3.86,4.83,9.25,6.9,14.96,3.36,9.26,6.84,18.83,15.18,24.76,8.69,6.17,19.55,6.26,29.13,6.33,5.86.05,11.39.09,15.65,1.42,4.36,1.36,8.99,4.5,13.89,7.83,7.8,5.29,16.65,11.29,27.04,11.29h.28c10.41-.11,19.18-6.32,26.91-11.8,4.87-3.45,9.48-6.72,13.89-8.2,4.1-1.38,9.55-1.55,15.31-1.71,9.64-.28,20.56-.61,29.26-7.08,8.7-6.47,12.16-16.84,15.2-25.99,1.82-5.47,3.54-10.63,6.05-14.16,2.7-3.8,7.15-7.27,11.86-10.94,7.47-5.83,15.94-12.43,19.05-22.38,3.13-10.04-.1-20.33-2.95-29.41-1.77-5.65-3.45-10.99-3.5-15.56-.05-4.46,1.51-9.77,3.15-15.4,2.69-9.2,5.73-19.62,2.32-29.72-3.27-9.7-11.44-15.79-19.34-21.67-4.87-3.63-9.47-7.05-12.34-10.92-2.87-3.86-4.83-9.25-6.9-14.96-3.36-9.26-6.84-18.83-15.18-24.76-8.69-6.17-19.55-6.26-29.13-6.33-5.86-.05-11.39-.09-15.65-1.42-4.36-1.36-8.99-4.5-13.89-7.83-7.8-5.29-16.65-11.29-27.04-11.29" />
-                <path fill="currentColor" d="M237.33,109.67c-12.44-8.95-25.54-10.48-41.24-4.81-1.66.6-3.17,1.33-4.54,2.17-15.14-9.66-32.58-14.84-50.64-15.03h0c-.17,0-.33,0-.5,0h-.5c-18.05.19-35.49,5.37-50.64,15.03-1.37-.84-2.88-1.57-4.54-2.17-15.7-5.67-28.8-4.14-41.24,4.81-6.36,4.57-8.71,11.54-6.16,18.18,2.72,7.06,10.17,11.37,18.14,10.48,5.54-.62,13.49-4.37,24.31-11.47,3.18-2.09,6.1-4.13,8.44-5.83.75,1.28,1.41,2.74,1.99,4.43,2.02,5.8,2.79,13.33,3.54,20.61.22,2.14.45,4.35.7,6.51.22,1.83.41,4.07.62,6.66.88,10.46,2.2,26.28,7.94,39.46,3.32,7.63,7.8,13.63,13.3,17.83,6.55,5,14.59,7.53,23.9,7.53s17-2.83,23.57-8.42c5.36-4.56,9.83-11.01,13.28-19.18,5.96-14.11,7.79-30.64,8.89-40.52.14-1.22.26-2.35.38-3.36.26-2.16.48-4.37.7-6.51.75-7.28,1.52-14.81,3.54-20.61.59-1.68,1.24-3.15,1.99-4.43,2.34,1.69,5.26,3.74,8.44,5.83,10.82,7.1,18.77,10.85,24.31,11.47.69.08,1.38.11,2.06.11,7.16,0,13.59-4.15,16.07-10.6,2.56-6.64.2-13.61-6.16-18.18M54.29,127.64c-3.63.4-6.13-1.61-6.92-3.66-.96-2.5.78-4.42,2.41-5.6,5.71-4.12,11.36-6.14,17.63-6.14,3.66,0,7.54.69,11.76,2.05-8.86,6.2-19.64,12.75-24.88,13.34M176.36,144.97c-.22,2.1-.44,4.26-.69,6.34-.12,1.04-.25,2.2-.39,3.45-1.03,9.3-2.76,24.86-8.11,37.52-5.98,14.15-14.79,21.03-26.94,21.03-7,0-12.68-1.74-17.38-5.32-4.04-3.08-7.39-7.65-9.97-13.58-5.03-11.56-6.22-25.72-7.08-36.06-.22-2.69-.42-5.02-.66-7.03-.25-2.08-.47-4.25-.69-6.34-1.08-10.47-2.25-21.84-7.41-30.12,13.08-7.85,27.98-12.03,43.36-12.11,15.39.09,30.28,4.26,43.36,12.11-5.16,8.28-6.33,19.65-7.41,30.12M233.45,123.99c-.79,2.04-3.29,4.06-6.92,3.66-5.24-.58-16.02-7.14-24.88-13.34,11.45-3.7,20.34-2.44,29.39,4.08,1.63,1.17,3.37,3.1,2.41,5.6" />
-            </svg>
-            
-            <div class="preloader-progress"></div>
-        </div>
-    </div>
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" aria-hidden="true"></div>
@@ -200,7 +609,7 @@
     <!-- Header Component -->
     <header id="main-header" class="header-habitas" role="banner">
         <div class="header-container">
-            <a href="/" class="logo" aria-label="Réveillon Carneiros - Página Inicial">
+            <a href="/" class="logo" aria-label="Réveillon Carneiros - Home">
                 <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280.83 291.53" aria-hidden="true">
                     <path fill="currentColor"
                         d="M139.09,7.91c13.69,0,25.49,14.68,38.58,18.76,13.02,4.06,31.2-1.41,42.56,6.65,10.96,7.78,11.87,26.62,20.32,37.99,8.45,11.37,26.24,17.66,30.53,30.39,4.45,13.2-6.02,29.04-5.88,42.67.14,13.77,10.9,29.38,6.8,42.54-4.06,13.02-21.74,19.74-29.8,31.09-7.78,10.96-8.16,29.93-19.52,38.38-11.37,8.45-29.64,3.35-42.38,7.64-13.2,4.45-24.72,19.45-38.36,19.59-.07,0-.13,0-.19,0-13.69,0-25.49-14.68-38.58-18.76-13.02-4.06-31.2,1.41-42.56-6.65-10.96-7.78-11.86-26.62-20.32-37.99-8.45-11.37-26.24-17.66-30.53-30.39-4.45-13.2,6.02-29.03,5.88-42.67-.14-13.77-10.9-29.38-6.8-42.54,4.06-13.02,21.73-19.74,29.8-31.09,7.78-10.96,8.16-29.93,19.52-38.38,11.37-8.45,29.64-3.35,42.38-7.65,13.2-4.45,24.72-19.44,38.36-19.58h.19M139.09,0c-.09,0-.18,0-.28,0-10.41.11-19.18,6.32-26.91,11.8-4.87,3.45-9.48,6.71-13.89,8.2-4.11,1.38-9.55,1.55-15.31,1.71-9.64.28-20.56.61-29.26,7.08-8.7,6.47-12.16,16.84-15.2,25.99-1.82,5.47-3.54,10.63-6.05,14.16-2.7,3.8-7.15,7.27-11.86,10.94-7.47,5.83-15.94,12.43-19.04,22.38-3.13,10.04.1,20.33,2.95,29.42,1.77,5.65,3.45,10.99,3.5,15.55.05,4.47-1.51,9.78-3.15,15.4-2.69,9.2-5.73,19.62-2.32,29.72,3.27,9.7,11.44,15.78,19.34,21.67,4.87,3.63,9.47,7.05,12.34,10.92,2.87,3.86,4.83,9.25,6.9,14.96,3.36,9.26,6.84,18.83,15.18,24.76,8.69,6.17,19.55,6.26,29.13,6.33,5.86.05,11.39.09,15.65,1.42,4.36,1.36,8.99,4.5,13.89,7.83,7.8,5.29,16.65,11.29,27.04,11.29h.28c10.41-.11,19.18-6.32,26.91-11.8,4.87-3.45,9.48-6.72,13.89-8.2,4.1-1.38,9.55-1.55,15.31-1.71,9.64-.28,20.56-.61,29.26-7.08,8.7-6.47,12.16-16.84,15.2-25.99,1.82-5.47,3.54-10.63,6.05-14.16,2.7-3.8,7.15-7.27,11.86-10.94,7.47-5.83,15.94-12.43,19.05-22.38,3.13-10.04-.1-20.33-2.95-29.41-1.77-5.65-3.45-10.99-3.5-15.56-.05-4.46,1.51-9.77,3.15-15.4,2.69-9.2,5.73-19.62,2.32-29.72-3.27-9.7-11.44-15.79-19.34-21.67-4.87-3.63-9.47-7.05-12.34-10.92-2.87-3.86-4.83-9.25-6.9-14.96-3.36-9.26-6.84-18.83-15.18-24.76-8.69-6.17-19.55-6.26-29.13-6.33-5.86-.05-11.39-.09-15.65-1.42-4.36-1.36-8.99-4.5-13.89-7.83-7.8-5.29-16.65-11.29-27.04-11.29" />
@@ -212,26 +621,43 @@
                 <ul class="nav-menu">
                     <li class="nav-dropdown">
                         <a href="#" class="nav-link" role="button" aria-haspopup="true"
-                            aria-expanded="false">Jornada</a>
+                            aria-expanded="false">Journey</a>
                         <div class="nav-dropdown-menu" role="menu">
                             <a href="#experiencia" role="menuitem">Night Celebrations</a>
                             <a href="#mouton-beach" role="menuitem">Mouton Beach Club</a>
                             <a href="#villa-mouton" role="menuitem">Villa Mouton</a>
                         </div>
                     </li>
-                    <li><a href="#musica" class="nav-link">Música</a></li>
+                    <li><a href="#musica" class="nav-link">Music</a></li>
                     <li><a href="#wellness" class="nav-link">Wellness</a></li>
-                    <li><a href="#destino" class="nav-link">Destino</a></li>
+                    <li><a href="#destino" class="nav-link">Destination</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
-                    <li><a href="#footer" class="nav-link">Contato</a></li>
+                    <li><a href="#footer" class="nav-link">Contact</a></li>
+                    <!-- Language Selector -->
+                    <li class="language-selector">
+                        <button class="lang-toggle" aria-label="Choose language">
+                            <img src="https://flagcdn.com/w20/us.png" alt="EN" class="current-flag">
+                            <span>EN</span>
+                        </button>
+                        <div class="lang-dropdown">
+                            <a href="/" class="lang-option">
+                                <img src="https://flagcdn.com/w20/br.png" alt="Portuguese">
+                                Português
+                            </a>
+                            <a href="/en/" class="lang-option active">
+                                <img src="https://flagcdn.com/w20/us.png" alt="English">
+                                English
+                            </a>
+                        </div>
+                    </li>
                     <li>
                         <div class="dropdown">
-                            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Comprar</button>
+                            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Buy</button>
                             <div class="dropdown-menu" role="menu">
                                 <a href="https://www.ingresse.com/reveillon-carneiros-2026/" target="_blank"
-                                    rel="noopener" role="menuitem">Ingressos</a>
+                                    rel="noopener" role="menuitem">Tickets</a>
                                 <a href="https://injoytravel.com.br/carneiros/" target="_blank" rel="noopener"
-                                    role="menuitem">Hotéis e Voos</a>
+                                    role="menuitem">Hotels & Flights</a>
                             </div>
                         </div>
                     </li>
@@ -247,21 +673,32 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section hero-habitas" role="main">
-        <!-- Hero with background image -->
-        <div class="hero-image"
-            style="background-image: url('assets/images/hero/hero-background.jpg'); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: -1;"
-            role="img" aria-label="Praia dos Carneiros ao pôr do sol">
-        </div>
+        <picture class="hero-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+            <source srcset="/assets/images/hero/hero-background-768.webp 768w,
+                            /assets/images/hero/hero-background.webp 1024w,
+                            /assets/images/hero/hero-background-high.webp 1920w"
+                    sizes="(max-width: 768px) 100vw, 100vw"
+                    type="image/webp">
+            <source srcset="/assets/images/hero/hero-background-768.jpg 768w,
+                            /assets/images/hero/hero-background.jpg 1024w,
+                            /assets/images/hero/hero-background-high.jpg 1920w"
+                    sizes="(max-width: 768px) 100vw, 100vw">
+            <img src="/assets/images/hero/hero-background.jpg" alt="Performer - born to be real"
+                style="width: 100%; height: 100%; object-fit: cover;" 
+                loading="eager" 
+                fetchpriority="high"
+                onerror="this.style.backgroundColor='#1a1a1a'; console.error('Hero image failed to load');">
+        </picture>
 
         <div class="hero-content">
             <h1 class="hero-title">Born to be Real</h1>
-            <p class="hero-subtitle">26 DEZEMBRO — 02 JANEIRO</p>
+            <p class="hero-subtitle">DECEMBER 26 — JANUARY 2</p>
             <p class="hero-description">
-                Uma jornada de transformação e celebração onde o tempo pausa para o que realmente importa.
-                Oito dias de imersão em música, natureza e conexão autêntica.
+                A transformative journey where time slows down for what truly matters.
+                Eight days immersed in music, nature, and genuine human connection.
             </p>
             <a href="https://www.ingresse.com/reveillon-carneiros-2026/" target="_blank" rel="noopener"
-                class="btn-habitas" style="animation: fadeInUp 1.5s ease-out 0.6s both;">Comprar</a>
+                class="btn-habitas" style="animation: fadeInUp 1.5s ease-out 0.6s both;">Get Tickets</a>
         </div>
     </section>
 
@@ -269,18 +706,16 @@
     <section id="manifesto" class="manifesto-section">
         <div class="container">
             <div class="manifesto-content" data-aos="fade-up">
-                <p class="section-label">Nosso Manifesto</p>
-                <h2 class="manifesto-title">Não é sobre fugir da realidade.<br>É sobre encontrá-la.</h2>
+                <p class="section-label">Our Manifesto</p>
+                <h2 class="manifesto-title">It's not about escaping reality.<br>It's about finding it.</h2>
                 <p class="manifesto-text">
-                    No Réveillon Carneiros, cada nascer do sol não é apenas o começo de um novo dia, mas de um novo
-                    você.
-                    Acreditamos em celebrações com intenção, onde bem-estar, música e natureza se unem para criar
-                    experiências que transformam.
+                    At Réveillon Carneiros, every sunrise brings more than just a new day—it brings a new you.
+                    We create intentional celebrations where wellness, music, and nature merge into something truly transformative.
                 </p>
                 <p class="manifesto-text">
-                    Aqui, você não é apenas um convidado.
-                    Você é parte de uma comunidade que busca conexão verdadeira, que celebra a autenticidade e que
-                    entende que os melhores momentos da vida acontecem quando nos permitimos ser quem realmente somos.
+                    Here, you're not just a guest.
+                    You're joining a community that values real connection, celebrates authenticity, and
+                    knows that life's most beautiful moments happen when we embrace who we truly are.
                 </p>
             </div>
         </div>
@@ -291,87 +726,103 @@
         <div class="container">
             <h2 data-aos="fade-up">Night Celebrations</h2>
             <p class="section-intro" data-aos="fade-up" data-aos-delay="100">
-                Seis noites temáticas, cada uma com sua energia única. Uma experiência all-inclusive
-                com open bar e open food em todas as celebrações, todas as noites.
+                Six themed nights, each with its unique energy. An all-inclusive experience
+                with open bar and open food at every celebration, every night.
             </p>
             <div class="experiences-wrapper">
                 <div class="experiences-grid" id="experiences-carousel">
                     <!-- AURA - 27 DEZ -->
                     <article class="experience-card" data-celebration="aura" data-aos="fade-up" data-aos-delay="200">
-                        <img src="assets/images/night-celebrations/aura.jpg" alt="AURA - A dança invisível das energias"
-                            loading="lazy">
+                        <img src="/assets/images/night-celebrations/aura.jpg"
+                            alt="AURA - The invisible dance of energies" decoding="async">
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>AURA</h3>
-                                <span class="experience-date">27.Dec</span>
+                                <span class="experience-date">Dec 27</span>
                             </div>
-                            <p>A dança invisível das energias. Uma celebração da vibração única de cada ser.</p>
+                            <p>The invisible dance of energies. A celebration of each being's unique vibration.</p>
                         </div>
                     </article>
 
                     <!-- LUAU - 28 DEZ -->
                     <article class="experience-card" data-celebration="luau" data-aos="fade-up" data-aos-delay="300">
-                        <img src="assets/images/night-celebrations/luau.jpg" alt="LUAU - Ao redor do fogo"
-                            loading="lazy">
+                        <picture>
+                            <source srcset="/assets/images/night-celebrations/luau.webp" type="image/webp">
+                            <img src="/assets/images/night-celebrations/luau.jpg" alt="LUAU - Around the fire"
+                                decoding="async"
+                                onerror="this.src='/assets/images/placeholder.jpg'; console.error('Failed to load:', this.src)">
+                        </picture>
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>LUAU</h3>
-                                <span class="experience-date">28.Dec</span>
+                                <span class="experience-date">Dec 28</span>
                             </div>
-                            <p>Ao redor do fogo, criamos memórias. União do mar, lua e música brasileira.</p>
+                            <p>Around the fire, we create memories. Where sea, moon, and Brazilian rhythms unite.</p>
                         </div>
                     </article>
 
                     <!-- AQUA - 29 DEZ -->
                     <article class="experience-card" data-celebration="aqua" data-aos="fade-up" data-aos-delay="400">
-                        <img src="assets/images/night-celebrations/aqua.jpg" alt="AQUA - Fluidez e renovação"
-                            loading="lazy">
+                        <picture>
+                            <source srcset="/assets/images/night-celebrations/aqua.webp" type="image/webp">
+                            <img src="/assets/images/night-celebrations/aqua.jpg" alt="AQUA - Flow and renewal"
+                                decoding="async"
+                                onerror="this.src='/assets/images/placeholder.jpg'; console.error('Failed to load:', this.src)">
+                        </picture>
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>AQUA</h3>
-                                <span class="experience-date">29.Dec</span>
+                                <span class="experience-date">Dec 29</span>
                             </div>
-                            <p>Fluidez e renovação. Celebramos as águas tropicais de Carneiros.</p>
+                            <p>Flow and renewal. We celebrate the tropical waters of Carneiros.</p>
                         </div>
                     </article>
 
                     <!-- ASTRAL - 30 DEZ -->
                     <article class="experience-card" data-celebration="astral" data-aos="fade-up" data-aos-delay="500">
-                        <img src="assets/images/night-celebrations/astral.jpg" alt="ASTRAL - O astro rei nos energiza"
-                            loading="lazy">
+                        <picture>
+                            <source srcset="/assets/images/night-celebrations/astral.webp" type="image/webp">
+                            <img src="/assets/images/night-celebrations/astral.jpg"
+                                alt="ASTRAL - The sun king energizes us" loading="lazy" decoding="async"
+                                onerror="this.src='/assets/images/placeholder.jpg'; console.error('Failed to load:', this.src)">
+                        </picture>
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>ASTRAL</h3>
-                                <span class="experience-date">30.Dec</span>
+                                <span class="experience-date">Dec 30</span>
                             </div>
-                            <p>O astro rei nos energiza. Celebração do sol tropical e do gingado brasileiro.</p>
+                            <p>The sun king energizes us. A celebration of tropical sun and Brazilian groove.</p>
                         </div>
                     </article>
 
                     <!-- RÉVEILLON - 31 DEZ -->
                     <article class="experience-card" data-celebration="reveillon" data-aos="fade-up"
                         data-aos-delay="600">
-                        <img src="assets/images/night-celebrations/reveillon.jpg" alt="RÉVEILLON - O ápice da jornada"
-                            loading="lazy">
+                        <img src="/assets/images/night-celebrations/reveillon.jpg"
+                            alt="RÉVEILLON - The journey's peak" loading="lazy" decoding="async" >
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>RÉVEILLON</h3>
-                                <span class="experience-date">31.Dec</span>
+                                <span class="experience-date">Dec 31</span>
                             </div>
-                            <p>O ápice da jornada. Todos os elementos unidos para celebrar um novo ciclo.</p>
+                            <p>This is what we've been building toward. Every element comes together as we celebrate a new beginning.</p>
                         </div>
                     </article>
 
                     <!-- FLORA - 02 JAN -->
                     <article class="experience-card" data-celebration="flora" data-aos="fade-up" data-aos-delay="700">
-                        <img src="assets/images/night-celebrations/flora.jpg" alt="FLORA - A natureza que brota"
-                            loading="lazy">
+                        <picture>
+                            <source srcset="/assets/images/night-celebrations/flora.webp" type="image/webp">
+                            <img src="/assets/images/night-celebrations/flora.jpg" alt="FLORA - Nature that blooms"
+                                loading="lazy" decoding="async"
+                                onerror="this.src='/assets/images/placeholder.jpg'; console.error('Failed to load:', this.src)">
+                        </picture>
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>FLORA</h3>
-                                <span class="experience-date">02.Jan</span>
+                                <span class="experience-date">Jan 2</span>
                             </div>
-                            <p>A natureza que brota. Uma noite para florescer em conexão com a terra.</p>
+                            <p>Watch nature bloom around you. Tonight we flourish in deep connection with the earth.</p>
                         </div>
                     </article>
                 </div>
@@ -383,26 +834,25 @@
     <section class="all-inclusive-section">
         <!-- Container de imagens de fundo -->
         <div class="all-inclusive-bg">
-            <div class="bg-image active" style="background-image: url('assets/images/all-inclusive/gastronomia.jpg');">
-            </div>
-            <div class="bg-image" style="background-image: url('assets/images/all-inclusive/buffet.jpg');"></div>
-            <div class="bg-image" style="background-image: url('assets/images/all-inclusive/bar.jpg');"></div>
-            <div class="bg-image" style="background-image: url('assets/images/all-inclusive/estrutura.jpg');"></div>
+            <div class="bg-image active" data-bg="/assets/images/all-inclusive/gastronomia.jpg"></div>
+            <div class="bg-image" data-bg="/assets/images/all-inclusive/buffet.jpg"></div>
+            <div class="bg-image" data-bg="/assets/images/all-inclusive/bar.jpg"></div>
+            <div class="bg-image" data-bg="/assets/images/all-inclusive/estrutura.jpg"></div>
         </div>
 
         <div class="all-inclusive-overlay"></div>
 
         <div class="container">
             <div class="all-inclusive-content content-section" data-aos="fade-up">
-                <h3>Experiência All-Inclusive</h3>
+                <h3>All-Inclusive Experience</h3>
                 <p>
-                    Todas as noites, sabores que contam histórias.
-                    Nossa curadoria gastronômica, pelo Buffet Arcádia, celebra o encontro entre as almas de Carneiros e
-                    a riqueza culinária brasileira.
+                    Every night brings flavors that tell a story.
+                    Our gastronomic curation by Buffet Arcádia celebrates the encounter between Carneiros' soul and
+                    Brazilian culinary richness.
                 </p>
                 <p>
-                    Open food e open bar premium em todas as celebrações.
-                    Uma experiência completa onde você só precisa estar presente.
+                    Premium open food and bar at every celebration.
+                    A complete experience where you just need to be present.
                 </p>
             </div>
         </div>
@@ -415,24 +865,24 @@
                 <div class="mouton-beach-inner">
                     <h2>Mouton Beach Club</h2>
                     <p>
-                        Durante o dia, o Mouton é seu refúgio à beira-mar.
-                        Um ambiente exclusivo para relaxar, comer e beber entre as festas noturnas,
-                        com toda a estrutura e conforto que você merece.
+                        During the day, Mouton becomes your beachfront sanctuary.
+                        It's an exclusive space where you can relax, eat, and drink. Enjoy Carneiros
+                        with all the comfort and amenities you need.
                     </p>
                     <p>
-                        Quando o sol começa a se despedir, o espaço se transforma.
-                        São seis sunsets com DJs e bandas nacionais e internacionais,
-                        criando a trilha sonora perfeita para celebrar o pôr do sol com os pés na areia.
+                        As the sun begins its farewell, the space transforms.
+                        Six magical sunsets featuring Brazilian and international DJs and bands,
+                        creating the perfect soundtrack to celebrate golden hour with your feet in the sand.
                     </p>
 
                     <div class="mouton-schedule">
                         <div class="schedule-block">
-                            <div class="schedule-time">09h às 15h</div>
-                            <div class="schedule-description">para apreciar</div>
+                            <div class="schedule-time">9am to 3pm</div>
+                            <div class="schedule-description">to savor</div>
                         </div>
                         <div class="schedule-block">
-                            <div class="schedule-time">16h às 22h</div>
-                            <div class="schedule-description">para celebrar</div>
+                            <div class="schedule-time">4pm to 10pm</div>
+                            <div class="schedule-description">to celebrate</div>
                         </div>
                     </div>
                 </div>
@@ -441,23 +891,23 @@
             <div class="mouton-beach-images" data-aos="fade-left">
                 <div class="mouton-slideshow">
                     <div class="mouton-slide active">
-                        <img src="assets/images/mouton/mouton-main.jpg" alt="Mouton Beach Club - Vista principal"
-                            loading="lazy">
+                        <img src="/assets/images/mouton/mouton-main.jpg" alt="Mouton Beach Club - Main view"
+                            loading="eager" fetchpriority="high">
                     </div>
                     <div class="mouton-slide">
-                        <img src="assets/images/mouton/sunset.jpg" alt="Sunset no Mouton" loading="lazy">
+                        <img src="/assets/images/mouton/sunset.jpg" alt="Sunset no Mouton" loading="lazy">
                     </div>
                     <div class="mouton-slide">
-                        <img src="assets/images/mouton/restaurante.jpg" alt="Sunset no Mouton" loading="lazy">
+                        <img src="/assets/images/mouton/restaurante.jpg" alt="Sunset no Mouton" loading="lazy">
                     </div>
                     <div class="mouton-slide">
-                        <img src="assets/images/mouton/lounge.jpg" alt="Lounge do Beach Club" loading="lazy">
+                        <img src="/assets/images/mouton/lounge.jpg" alt="Lounge do Beach Club" loading="lazy">
                     </div>
                     <div class="mouton-slide">
-                        <img src="assets/images/mouton/beach-view.jpg" alt="Vista da praia" loading="lazy">
+                        <img src="/assets/images/mouton/beach-view.jpg" alt="Beach view" loading="lazy">
                     </div>
                     <div class="mouton-slide">
-                        <img src="assets/images/mouton/people.jpg" alt="Mulher dançando" loading="lazy">
+                        <img src="/assets/images/mouton/people.jpg" alt="Woman dancing" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -468,8 +918,8 @@
         <div class="villa-mouton-grid">
             <!-- Lado das imagens - sem slideshow automático -->
             <div class="villa-mouton-images" data-aos="fade-right">
-                <img id="villa-main-image" src="assets/images/villa-mouton/default.jpg"
-                    alt="Villa Mouton - Espaço principal" loading="lazy">
+                <img id="villa-main-image" src="/assets/images/villa-mouton/default.jpg"
+                    alt="Villa Mouton - Main space">
             </div>
 
             <!-- Lado do conteúdo - mantém tudo como está -->
@@ -477,31 +927,31 @@
                 <div class="villa-services-inner">
                     <h2>Villa Mouton</h2>
                     <p class="villa-services-intro">
-                        O ponto de encontro do Réveillon Carneiros.
-                        Um espaço pensado para oferecer experiências e serviços
-                        que tornam sua jornada ainda mais especial.
+                        The heart of Réveillon Carneiros.
+                        A space designed to offer experiences and services
+                        that make your journey even more special.
                     </p>
 
                     <div class="service-list-item" data-image="beleza">
                         <button class="service-toggle" aria-expanded="false" aria-controls="service-beleza">
-                            BELEZA E AUTOCUIDADO
+                            BEAUTY & SELF-CARE
                         </button>
                         <div class="service-description" id="service-beleza">
                             <p>
-                                Salão de beleza e barbearia completos para você se sentir ainda mais especial.
-                                Profissionais qualificados prontos para realçar sua beleza natural.
+                                Complete beauty salon and barbershop to make you feel even more special.
+                                Qualified professionals ready to enhance your natural beauty.
                             </p>
                         </div>
                     </div>
 
                     <div class="service-list-item" data-image="gastronomia">
                         <button class="service-toggle" aria-expanded="false" aria-controls="service-gastronomia">
-                            GASTRONOMIA
+                            GASTRONOMY
                         </button>
                         <div class="service-description" id="service-gastronomia">
                             <p>
-                                Sabores especiais em parceria com chefs locais. Uma experiência
-                                gastronômica que celebra os ingredientes frescos do mar de Carneiros.
+                                Special flavors in partnership with local chefs. A gastronomic experience
+                                that celebrates the fresh ingredients from Carneiros' sea.
                             </p>
                         </div>
                     </div>
@@ -512,20 +962,20 @@
                         </button>
                         <div class="service-description" id="service-store">
                             <p>
-                                Leve um pedaço dessa experiência com você. Nossa loja exclusiva
-                                oferece produtos oficiais e artesanato local.
+                                Take a piece of this experience with you. Our exclusive store
+                                offers official products and local crafts.
                             </p>
                         </div>
                     </div>
 
                     <div class="service-list-item" data-image="suporte">
                         <button class="service-toggle" aria-expanded="false" aria-controls="service-suporte">
-                            SUPORTE E BILHETERIA
+                            SUPPORT & TICKETING
                         </button>
                         <div class="service-description" id="service-suporte">
                             <p>
-                                Central de atendimento completa. Nossa equipe está sempre pronta
-                                para ajudar com informações e qualquer suporte necessário.
+                                Complete customer service center. Our team is always ready
+                                to help with information and any support you might need.
                             </p>
                         </div>
                     </div>
@@ -534,15 +984,27 @@
         </div>
     </section>
 
-
     <!-- Music Section -->
     <section id="musica" class="music-section">
         <div class="container">
-            <h2 data-aos="fade-up">Curadoria Musical</h2>
+            <h2 data-aos="fade-up">Music Curation</h2>
+
+            <!-- Anúncio sutil do Line-up 2026 -->
+            <div class="lineup-teaser" data-aos="fade-up" data-aos-delay="50">
+                <p>2026 Line-up coming soon •
+                    <a href="#newsletter" class="teaser-link">Sign up to be notified</a>
+                </p>
+            </div>
+
             <p class="section-intro" data-aos="fade-up" data-aos-delay="100">
-                Uma jornada sonora cuidadosamente selecionada. Artistas internacionais
-                e talentos brasileiros criam a trilha perfeita para sua transformação.
+                Over the years, we've brought together international artists and Brazilian talent
+                who've created unforgettable moments on our stages.
             </p>
+        </div>
+
+        <!-- Badge separado do carrossel -->
+        <div class="past-editions-label" data-aos="fade-up" data-aos-delay="150">
+            <span>Artists from Previous Editions</span>
         </div>
 
         <!-- Artists Swiper Carousel -->
@@ -552,16 +1014,16 @@
                     <!-- Black Coffee -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/blackcoffee.jpg" alt="Black Coffee - DJ sul-africano"
-                                loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <img src="/assets/images/artists/blackcoffee.jpg" alt="Black Coffee - South African DJ"
+                                width="410" height="530" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Black Coffee</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/za.png" alt="África do Sul">
-                                        <span>África do Sul</span>
+                                        <img src="https://flagcdn.com/w20/za.png" alt="South Africa">
+                                        <span>South Africa</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -570,7 +1032,9 @@
                     <!-- Carl Cox -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/carlcox.jpg" alt="Carl Cox - DJ britânico" loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <img src="/assets/images/artists/carlcox.jpg" alt="Carl Cox - British DJ"
+                                width="410" height="530" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Carl Cox</p>
                                 <div class="artist-info">
@@ -578,7 +1042,6 @@
                                         <img src="https://flagcdn.com/w20/gb.png" alt="Reino Unido">
                                         <span>Reino Unido</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -587,16 +1050,16 @@
                     <!-- Vintage Culture -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/vintage.jpg" alt="Vintage Culture - DJ brasileiro"
-                                loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <img src="/assets/images/artists/vintage.jpg" alt="Vintage Culture - Brazilian DJ"
+                                width="410" height="530" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Vintage Culture</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
-                                        <span>Brasil</span>
+                                        <img src="https://flagcdn.com/w20/br.png" alt="Brazil">
+                                        <span>Brazil</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -605,16 +1068,16 @@
                     <!-- WhoMadeWho -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/whomadewho.jpg" alt="WhoMadeWho - Banda dinamarquesa"
-                                loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <img src="/assets/images/artists/whomadewho.jpg" alt="WhoMadeWho - Danish band"
+                                width="410" height="530" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">WhoMadeWho</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/dk.png" alt="Dinamarca">
+                                        <img src="https://flagcdn.com/w20/dk.png" alt="Denmark">
                                         <span>Dinamarca</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -623,16 +1086,16 @@
                     <!-- Keinemusik -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/keine.jpg" alt="Keinemusik - Coletivo alemão"
-                                loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <img src="/assets/images/artists/keine.jpg" alt="Keinemusik - German collective"
+                                width="410" height="530" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Keinemusik</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/de.png" alt="Alemanha">
+                                        <img src="https://flagcdn.com/w20/de.png" alt="Germany">
                                         <span>Alemanha</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -641,15 +1104,16 @@
                     <!-- Carlita -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/carlita.jpg" alt="Carlita - DJ turca" loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <img src="/assets/images/artists/carlita.jpg" alt="Carlita - Turkish DJ"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Carlita</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/tr.png" alt="Turquia">
+                                        <img src="https://flagcdn.com/w20/tr.png" alt="Turkey">
                                         <span>Turquia</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -658,16 +1122,16 @@
                     <!-- Jorge Ben Jor -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/jorgeben.jpg" alt="Jorge Ben Jor - Cantor brasileiro"
-                                loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <img src="/assets/images/artists/jorgeben.jpg" alt="Jorge Ben Jor - Brazilian singer"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Jorge Ben Jor</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
-                                        <span>Brasil</span>
+                                        <img src="https://flagcdn.com/w20/br.png" alt="Brazil">
+                                        <span>Brazil</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -676,16 +1140,16 @@
                     <!-- Seu Jorge -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/seujorge.jpg" alt="Seu Jorge - Cantor brasileiro"
-                                loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <img src="/assets/images/artists/seujorge.jpg" alt="Seu Jorge - Brazilian singer"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Seu Jorge</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
-                                        <span>Brasil</span>
+                                        <img src="https://flagcdn.com/w20/br.png" alt="Brazil">
+                                        <span>Brazil</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -694,16 +1158,16 @@
                     <!-- Natiruts -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/natiruts.jpg" alt="Natiruts - Banda brasileira"
-                                loading="lazy">
+                            <span class="artist-year-badge">2022</span>
+                            <img src="/assets/images/artists/natiruts.jpg" alt="Natiruts - Brazilian band"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Natiruts</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
-                                        <span>Brasil</span>
+                                        <img src="https://flagcdn.com/w20/br.png" alt="Brazil">
+                                        <span>Brazil</span>
                                     </div>
-                                    <span class="artist-year">2022</span>
                                 </div>
                             </div>
                         </article>
@@ -712,15 +1176,16 @@
                     <!-- ANOTR -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/anotr.jpg" alt="ANOTR - DJ holandês" loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <img src="/assets/images/artists/anotr.jpg" alt="ANOTR - Dutch DJ"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">ANOTR</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/nl.png" alt="Holanda">
+                                        <img src="https://flagcdn.com/w20/nl.png" alt="Netherlands">
                                         <span>Holanda</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -729,15 +1194,16 @@
                     <!-- Mochakk -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/mochakk.jpg" alt="Mochakk - DJ brasileiro" loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <img src="/assets/images/artists/mochakk.jpg" alt="Mochakk - Brazilian DJ"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Mochakk</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
-                                        <span>Brasil</span>
+                                        <img src="https://flagcdn.com/w20/br.png" alt="Brazil">
+                                        <span>Brazil</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -746,8 +1212,9 @@
                     <!-- Damian Lazarus -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/damianlazarus.jpg" alt="Damian Lazarus - DJ britânico"
-                                loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <img src="/assets/images/artists/damianlazarus.jpg" alt="Damian Lazarus - British DJ"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Damian Lazarus</p>
                                 <div class="artist-info">
@@ -755,7 +1222,6 @@
                                         <img src="https://flagcdn.com/w20/gb.png" alt="Reino Unido">
                                         <span>Reino Unido</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -764,7 +1230,9 @@
                     <!-- PAWSA -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/pawsa.jpg" alt="PAWSA - DJ britânico" loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <img src="/assets/images/artists/pawsa.jpg" alt="PAWSA - British DJ"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">PAWSA</p>
                                 <div class="artist-info">
@@ -772,7 +1240,6 @@
                                         <img src="https://flagcdn.com/w20/gb.png" alt="Reino Unido">
                                         <span>Reino Unido</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -781,15 +1248,16 @@
                     <!-- Folamour -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/folamour.jpg" alt="Folamour - DJ francês" loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <img src="/assets/images/artists/folamour.jpg" alt="Folamour - French DJ"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Folamour</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/fr.png" alt="França">
+                                        <img src="https://flagcdn.com/w20/fr.png" alt="France">
                                         <span>França</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -798,8 +1266,9 @@
                     <!-- Lee Burridge -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/leeburridge.jpg" alt="Lee Burridge - DJ britânico"
-                                loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <img src="/assets/images/artists/leeburridge.jpg" alt="Lee Burridge - British DJ"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Lee Burridge</p>
                                 <div class="artist-info">
@@ -807,7 +1276,6 @@
                                         <img src="https://flagcdn.com/w20/gb.png" alt="Reino Unido">
                                         <span>Reino Unido</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -816,16 +1284,16 @@
                     <!-- Pablo Fierro -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/pablofierro.jpg" alt="Pablo Fierro - DJ argentino"
-                                loading="lazy">
+                            <span class="artist-year-badge">2022</span>
+                            <img src="/assets/images/artists/pablofierro.jpg" alt="Pablo Fierro - Spanish DJ"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Pablo Fierro</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/ar.png" alt="Argentina">
-                                        <span>Argentina</span>
+                                        <img src="https://flagcdn.com/w20/es.png" alt="Spain">
+                                        <span>Spain</span>
                                     </div>
-                                    <span class="artist-year">2022</span>
                                 </div>
                             </div>
                         </article>
@@ -834,16 +1302,16 @@
                     <!-- Bob Moses -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/bobmoses.jpg" alt="Bob Moses - Duo canadense"
-                                loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <img src="/assets/images/artists/bobmoses.jpg" alt="Bob Moses - Canadian duo"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Bob Moses</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/ca.png" alt="Canadá">
-                                        <span>Canadá</span>
+                                        <img src="https://flagcdn.com/w20/ca.png" alt="Canada">
+                                        <span>Canada</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -852,15 +1320,16 @@
                     <!-- Monolink -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/monolink.jpg" alt="Monolink - DJ alemão" loading="lazy">
+                            <span class="artist-year-badge">2022</span>
+                            <img src="/assets/images/artists/monolink.jpg" alt="Monolink - German DJ"
+                                width="410" height="530" loading="lazy" decoding="async">
                             <div class="artist-overlay">
                                 <p class="artist-name">Monolink</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/de.png" alt="Alemanha">
+                                        <img src="https://flagcdn.com/w20/de.png" alt="Germany">
                                         <span>Alemanha</span>
                                     </div>
-                                    <span class="artist-year">2022</span>
                                 </div>
                             </div>
                         </article>
@@ -873,10 +1342,10 @@
     <!-- Wellness Section -->
     <section id="wellness" class="wellness-section">
         <div class="container">
-            <h2 data-aos="fade-up">Wellness & Reconexão</h2>
+            <h2 data-aos="fade-up">Wellness & Reconnection</h2>
             <p class="section-intro" data-aos="fade-up" data-aos-delay="100">
-                Entre uma celebração e outra, oferecemos espaços de reconexão
-                para nutrir corpo, mente e espírito.
+                Between celebrations, we offer spaces for reconnection
+                to nourish body, mind, and spirit.
             </p>
 
             <!-- Wellness Carousel -->
@@ -885,50 +1354,50 @@
                     <div class="wellness-carousel" id="wellness-carousel">
                         <!-- Original set -->
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/manguegym.jpg" alt="Mangue Gym - Academia ao ar livre"
+                            <img src="/assets/images/wellness/manguegym.jpg" alt="Mangue Gym - Outdoor gym"
                                 loading="lazy">
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/run.jpg" alt="Carneiros Run - Corrida na praia"
+                            <img src="/assets/images/wellness/run.jpg" alt="Carneiros Run - Beach running"
                                 loading="lazy">
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/rituaus.jpg" alt="Rituaus - Práticas de bem-estar"
+                            <img src="/assets/images/wellness/rituaus.jpg" alt="Rituaus - Wellness practices"
                                 loading="lazy">
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/yoga.jpg" alt="Yoga - Prática ao nascer do sol"
+                            <img src="/assets/images/wellness/yoga.jpg" alt="Yoga - Sunrise practice"
                                 loading="lazy">
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/icebath.jpg" alt="Ice Bath - Banho de gelo" loading="lazy">
+                            <img src="/assets/images/wellness/icebath.jpg" alt="Ice Bath - Cold therapy" loading="lazy">
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/spa.jpg" alt="Spa e massagens relaxantes" loading="lazy">
+                            <img src="/assets/images/wellness/spa.jpg" alt="Spa and relaxing massages" loading="lazy">
                         </div>
 
                         <!-- Duplicate for infinite loop -->
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/manguegym.jpg" alt="Mangue Gym - Academia ao ar livre"
+                            <img src="/assets/images/wellness/manguegym.jpg" alt="Mangue Gym - Outdoor gym"
                                 loading="lazy">
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/run.jpg" alt="Carneiros Run - Corrida na praia"
+                            <img src="/assets/images/wellness/run.jpg" alt="Carneiros Run - Beach running"
                                 loading="lazy">
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/rituaus.jpg" alt="Rituaus - Práticas de bem-estar"
+                            <img src="/assets/images/wellness/rituaus.jpg" alt="Rituaus - Wellness practices"
                                 loading="lazy">
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/yoga.jpg" alt="Yoga - Prática ao nascer do sol"
+                            <img src="/assets/images/wellness/yoga.jpg" alt="Yoga - Sunrise practice"
                                 loading="lazy">
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/icebath.jpg" alt="Ice Bath - Banho de gelo" loading="lazy">
+                            <img src="/assets/images/wellness/icebath.jpg" alt="Ice Bath - Cold therapy" loading="lazy">
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/spa.jpg" alt="Spa e massagens relaxantes" loading="lazy">
+                            <img src="/assets/images/wellness/spa.jpg" alt="Spa and relaxing massages" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -937,51 +1406,51 @@
             <!-- Wellness Activities -->
             <div class="wellness-activities" data-aos="fade-up" data-aos-delay="300">
                 <div class="wellness-category">
-                    <h3>Recuperação</h3>
+                    <h3>Mind</h3>
                     <div class="activity-item">
                         <button class="activity-toggle" aria-expanded="false"
                             aria-controls="activity-yoga">Yoga</button>
                         <div class="activity-description" id="activity-yoga">
-                            <p>Pratique yoga ao nascer do sol na praia, conectando-se com a
-                                natureza e iniciando o dia
-                                com energia renovada.</p>
+                            <p>Practice yoga at sunrise on the beach, connecting with
+                                nature and starting your day
+                                with renewed energy.</p>
                         </div>
                     </div>
                     <div class="activity-item">
                         <button class="activity-toggle" aria-expanded="false"
                             aria-controls="activity-rituais">Rituaus</button>
                         <div class="activity-description" id="activity-rituais">
-                            <p>Cerimônias de conexão e celebração, unindo meditação, respiração
-                                e práticas ancestrais de
-                                renovação.</p>
+                            <p>Connection and celebration ceremonies, uniting meditation, breathing,
+                                and ancestral practices of
+                                renewal.</p>
                         </div>
                     </div>
                     <div class="activity-item">
                         <button class="activity-toggle" aria-expanded="false" aria-controls="activity-spa">Spa</button>
                         <div class="activity-description" id="activity-spa">
-                            <p>Massagens terapêuticas e tratamentos relaxantes para revitalizar
-                                corpo e mente.</p>
+                            <p>Therapeutic massages and relaxing treatments to revitalize
+                                body and mind.</p>
                         </div>
                     </div>
                     <div class="activity-item">
                         <button class="activity-toggle" aria-expanded="false" aria-controls="activity-herbal">Herbal
                             Bath</button>
                         <div class="activity-description" id="activity-herbal">
-                            <p>Banhos aromáticos com ervas medicinais locais para purificação e
-                                relaxamento profundo.
+                            <p>Aromatic baths with local medicinal herbs for purification and
+                                deep relaxation.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="wellness-category">
-                    <h3>Intensidade</h3>
+                    <h3>Body</h3>
                     <div class="activity-item">
                         <button class="activity-toggle" aria-expanded="false" aria-controls="activity-run">Carneiros
                             Run</button>
                         <div class="activity-description" id="activity-run">
-                            <p>Corrida matinal pela orla paradisíaca, com o som das ondas como
-                                trilha sonora natural.
+                            <p>Morning run along the paradisiacal shore, with the sound of waves as
+                                your natural soundtrack.
                             </p>
                         </div>
                     </div>
@@ -989,24 +1458,24 @@
                         <button class="activity-toggle" aria-expanded="false" aria-controls="activity-gym">Mangue
                             Gym</button>
                         <div class="activity-description" id="activity-gym">
-                            <p>Academia sustentável ao ar livre, integrada à natureza dos
-                                manguezais.</p>
+                            <p>Sustainable outdoor gym, integrated with the natural
+                                mangrove environment.</p>
                         </div>
                     </div>
                     <div class="activity-item">
-                        <button class="activity-toggle" aria-expanded="false" aria-controls="activity-funcional">Treino
-                            Funcional</button>
+                        <button class="activity-toggle" aria-expanded="false" aria-controls="activity-funcional">Functional
+                            Training</button>
                         <div class="activity-description" id="activity-funcional">
-                            <p>Exercícios de alta intensidade na praia para fortalecer corpo e
-                                mente.</p>
+                            <p>High-intensity beach workouts to strengthen both body and
+                                mind.</p>
                         </div>
                     </div>
                     <div class="activity-item">
                         <button class="activity-toggle" aria-expanded="false" aria-controls="activity-ice">Ice
                             Bath</button>
                         <div class="activity-description" id="activity-ice">
-                            <p>Imersão em água gelada para recuperação muscular e fortalecimento
-                                mental.</p>
+                            <p>Cold water immersion for muscle recovery and mental
+                                strengthening.</p>
                         </div>
                     </div>
                 </div>
@@ -1019,42 +1488,42 @@
         <div class="container">
             <h2 data-aos="fade-up">Praia dos Carneiros</h2>
             <p class="section-intro" data-aos="fade-up" data-aos-delay="100">
-                Um paraíso tropical onde águas cristalinas encontram areias brancas,
-                criando o cenário perfeito para sua transformação.
+                A tropical paradise where crystal-clear waters meet white sand,
+                creating the perfect setting for your transformation.
             </p>
 
             <div class="destination-grid">
                 <div class="destination-images" data-aos="fade-right">
                     <div class="destination-main-slideshow">
-                        <img src="assets/images/destino/main-carneiros.jpg" alt="Praia dos Carneiros - Vista aérea"
+                        <img src="/assets/images/destino/main-carneiros.jpg" alt="Praia dos Carneiros - Aerial view"
                             class="destination-slide active" loading="lazy">
-                        <img src="assets/images/destino/people.jpg" alt="Capela São Benedito - Cartão postal da praia"
+                        <img src="/assets/images/destino/people.jpg" alt="São Benedito Chapel - Beach postcard"
                             class="destination-slide" loading="lazy">
-                        <img src="assets/images/destino/view.jpg" alt="Piscinas Naturais de Carneiros"
+                        <img src="/assets/images/destino/view.jpg" alt="Carneiros Natural Pools"
                             class="destination-slide" loading="lazy">
                     </div>
                 </div>
 
                 <div class="destination-info" data-aos="fade-left">
-                    <h3>Como Chegar</h3>
+                    <h3>Getting There</h3>
                     <div class="travel-details">
                         <div class="travel-item">
-                            <h4>Aeroporto</h4>
-                            <p>REC - Aeroporto Internacional do Recife<br>
-                                Recife, Pernambuco, Brasil</p>
+                            <h4>Airport</h4>
+                            <p>REC - Recife International Airport<br>
+                                Recife, Pernambuco, Brazil</p>
                         </div>
                         <div class="travel-item">
-                            <h4>Trajeto até Carneiros</h4>
-                            <p>90km do aeroporto (aproximadamente 1h30)<br>
-                                Transfer, táxi ou carro alugado disponíveis</p>
+                            <h4>Route to Carneiros</h4>
+                            <p>90km from airport (approximately 1h30min)<br>
+                                Transfer, taxi or rental car available</p>
                         </div>
                         <div class="travel-item">
-                            <h4>Hospedagem e Viagem</h4>
-                            <p>Pacotes completos com a melhor seleção de hotéis e pousadas da
-                                região.</p>
+                            <h4>Accommodation & Travel</h4>
+                            <p>Complete packages with the best selection of hotels and inns in the
+                                region.</p>
                             <a href="https://injoytravel.com.br/carneiros/" target="_blank" rel="noopener"
                                 class="btn-habitas-outline">
-                                Hospedagens e Voos
+                                Hotels & Flights
                             </a>
                         </div>
                     </div>
@@ -1064,8 +1533,7 @@
             <div class="map-container" data-aos="fade-up" data-aos-delay="300">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31541.18732490766!2d-35.10489592089844!3d-8.715674150000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aa82437ea03031%3A0x336f75ffd9e3f152!2sPraia%20dos%20Carneiros!5e0!3m2!1spt-BR!2sbr!4v1695849025374!5m2!1spt-BR!2sbr"
-                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" title="Mapa da localização da Praia dos Carneiros">
+                    width="100%" height="400" style="border:0;" allowfullscreen=""                     referrerpolicy="no-referrer-when-downgrade" title="Praia dos Carneiros location map">
                 </iframe>
             </div>
         </div>
@@ -1074,9 +1542,9 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq-section">
         <div class="container">
-            <h2 data-aos="fade-up">Perguntas Frequentes</h2>
+            <h2 data-aos="fade-up">Frequently Asked Questions</h2>
             <p class="section-intro" data-aos="fade-up" data-aos-delay="100">
-                Tudo o que você precisa saber para viver a experiência completa do Réveillon
+                Everything you need to know to live the complete New Year's experience in
                 Carneiros.
             </p>
 
@@ -1084,114 +1552,114 @@
                 <!-- Category: Ingressos e Vendas -->
                 <div class="faq-category-wrapper" data-aos="fade-up" data-aos-delay="200">
                     <button class="faq-category-toggle" aria-expanded="false" aria-controls="faq-category-tickets">
-                        <span>Ingressos e Vendas</span>
+                        <span>Tickets & Sales</span>
                         <span class="faq-toggle-icon" aria-hidden="true"></span>
                     </button>
 
                     <div class="faq-category-content" id="faq-category-tickets">
                         <div class="faq-item">
-                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-types">Quais
-                                são os tipos de ingressos?</button>
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-types">What
+                                are the ticket types?</button>
                             <div class="faq-answer" id="faq-answer-types">
                                 <div class="faq-answer-content">
-                                    <strong>FULL PASS:</strong> Acesso a todas as 6 Night
+                                    <strong>FULL PASS:</strong> Access to all 6 Night
                                     Celebrations (all-inclusive) +
-                                    7 festas do Mouton Beach Club.<br><br>
-                                    <strong>NIGHT PASS:</strong> Acesso a todas as 6 Night
+                                    7 Mouton Beach Club parties.<br><br>
+                                    <strong>NIGHT PASS:</strong> Access to all 6 Night
                                     Celebrations
                                     (all-inclusive).<br><br>
-                                    <strong>NIGHT COMBO:</strong> Combo de 3 ou 4 dias das Night
-                                    Celebrations, sendo o
-                                    dia 31/12 obrigatório.<br><br>
-                                    <strong>MOUTON PASS:</strong> Acesso às 7 festas do Mouton
-                                    Beach Club.<br><br>
-                                    <strong>RÉVEILLON 31/12:</strong> Ingresso avulso para a
-                                    noite de 31 de Dezembro
+                                    <strong>NIGHT COMBO:</strong> Bundle for 3 or 4 days of Night
+                                    Celebrations, with
+                                    December 31st mandatory.<br><br>
+                                    <strong>MOUTON PASS:</strong> Access to the 7 Mouton
+                                    Beach Club parties.<br><br>
+                                    <strong>NEW YEAR'S EVE 31/12:</strong> Individual ticket for the
+                                    December 31st night
                                     (All Inclusive).<br><br>
-                                    <strong>INGRESSOS AVULSOS:</strong> Acesso para festa
-                                    específica selecionada.
+                                    <strong>INDIVIDUAL TICKETS:</strong> Access to specific
+                                    selected party.
                                 </div>
                             </div>
                         </div>
 
                         <div class="faq-item">
-                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-release">Quando
-                                vão liberar novos tipos de ingresso?</button>
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-release">When
+                                will new ticket types be released?</button>
                             <div class="faq-answer" id="faq-answer-release">
                                 <div class="faq-answer-content">
-                                    Os ingressos são liberados em diferentes fases ao longo do
-                                    ano.
-                                    Sempre comunicamos com antecedência quando uma nova
-                                    categoria estiver
-                                    prestes a ser disponibilizada. Acompanhe as novidades pelos
-                                    nossos canais oficiais.
+                                    Tickets are released in different phases throughout the
+                                    year.
+                                    We always communicate in advance when a new
+                                    category is about
+                                    to be made available. Follow the news through
+                                    our official channels.
                                 </div>
                             </div>
                         </div>
 
                         <div class="faq-item">
-                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-transfer">Se eu
-                                comprei um pacote mas não desejo ir para todas as festas,
-                                posso transferir apenas dias específicos para outra
-                                pessoa?</button>
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-transfer">If I
+                                bought a package but don't want to attend all the parties,
+                                can I transfer only specific days to another
+                                person?</button>
                             <div class="faq-answer" id="faq-answer-transfer">
                                 <div class="faq-answer-content">
-                                    Não. Os ingressos são nominais e intransferíveis. Os pacotes
-                                    possuem QR Code
-                                    único e não podem ser desmembrados.
+                                    No. Tickets are nominal and non-transferable. Packages
+                                    have a unique QR Code
+                                    and cannot be broken down.
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Category: Sobre o Evento -->
+                <!-- Category: About the Event -->
                 <div class="faq-category-wrapper" data-aos="fade-up" data-aos-delay="300">
                     <button class="faq-category-toggle" aria-expanded="false" aria-controls="faq-category-event">
-                        <span>Sobre o Evento</span>
+                        <span>About the Event</span>
                         <span class="faq-toggle-icon" aria-hidden="true"></span>
                     </button>
 
                     <div class="faq-category-content" id="faq-category-event">
                         <div class="faq-item">
-                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-lineup">Quais
-                                são as atrações do Réveillon Carneiros 2026?</button>
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-lineup">What
+                                are the attractions of Réveillon Carneiros 2026?</button>
                             <div class="faq-answer" id="faq-answer-lineup">
                                 <div class="faq-answer-content">
-                                    As atrações do Réveillon Carneiros 2026 ainda não começaram
-                                    a ser anunciadas.
-                                    Acompanhe nossos canais oficiais para receber novidades em
-                                    primeira mão.
+                                    The attractions for Réveillon Carneiros 2026 have not yet started
+                                    to be announced.
+                                    Follow our official channels to receive news
+                                    first-hand.
                                 </div>
                             </div>
                         </div>
 
                         <div class="faq-item">
-                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-schedule">Qual
-                                o horário das festas?</button>
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-schedule">What
+                                are the party hours?</button>
                             <div class="faq-answer" id="faq-answer-schedule">
                                 <div class="faq-answer-content">
-                                    <strong>Night Celebrations:</strong> Todas as festas
-                                    noturnas acontecem das 22:00 às
-                                    06:00,
-                                    com exceção da noite de Réveillon, que tem horário especial:
-                                    20:00 às 06:00.<br><br>
-                                    <strong>Mouton Beach Club:</strong> As festas sunset
-                                    acontecem todos os dias das
-                                    16:00 às 22:00.
+                                    <strong>Night Celebrations:</strong> All night parties
+                                    happen from 10:00 PM to
+                                    6:00 AM,
+                                    except for New Year's Eve night, which has special hours:
+                                    8:00 PM to 6:00 AM.<br><br>
+                                    <strong>Mouton Beach Club:</strong> Sunset parties
+                                    happen every day from
+                                    4:00 PM to 10:00 PM.
                                 </div>
                             </div>
                         </div>
 
                         <div class="faq-item">
-                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-location">Qual
-                                a localização das festas?</button>
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-location">What is
+                                the location of the parties?</button>
                             <div class="faq-answer" id="faq-answer-location">
                                 <div class="faq-answer-content">
-                                    <strong>Night Celebrations:</strong> Ficam localizadas
-                                    próximo ao condomínio Pontal
-                                    dos Carneiros.<br><br>
-                                    <strong>Mouton Beach Club:</strong> Será sediado na Pousada
+                                    <strong>Night Celebrations:</strong> Located
+                                    near the Pontal dos Carneiros
+                                    condominium.<br><br>
+                                    <strong>Mouton Beach Club:</strong> Will be hosted at Pousada
                                     Praia dos Carneiros.
                                 </div>
                             </div>
@@ -1199,38 +1667,37 @@
                     </div>
                 </div>
 
-                <!-- Category: Atividades e Serviços -->
+                <!-- Category: Activities & Services -->
                 <div class="faq-category-wrapper" data-aos="fade-up" data-aos-delay="400">
                     <button class="faq-category-toggle" aria-expanded="false" aria-controls="faq-category-activities">
-                        <span>Atividades e Serviços</span>
+                        <span>Activities & Services</span>
                         <span class="faq-toggle-icon" aria-hidden="true"></span>
                     </button>
 
                     <div class="faq-category-content" id="faq-category-activities">
                         <div class="faq-item">
                             <button class="faq-question" aria-expanded="false"
-                                aria-controls="faq-answer-wellness-free">As atividades Wellness
-                                são gratuitas?</button>
+                                aria-controls="faq-answer-wellness-free">Are the Wellness activities
+                                free?</button>
                             <div class="faq-answer" id="faq-answer-wellness-free">
                                 <div class="faq-answer-content">
-                                    A maior parte das atividades é gratuita para os clientes do
-                                    Réveillon Carneiros,
-                                    porém algumas experiências específicas podem ter custo
-                                    adicional.
-                                    Para participar, é necessário inscrição.
+                                    Most activities are free for Réveillon Carneiros clients,
+                                    but some specific experiences may have additional
+                                    costs.
+                                    Registration is required to participate.
                                 </div>
                             </div>
                         </div>
 
                         <div class="faq-item">
                             <button class="faq-question" aria-expanded="false"
-                                aria-controls="faq-answer-registration">Preciso me inscrever
-                                para participar das
-                                atividades?</button>
+                                aria-controls="faq-answer-registration">Do I need to register
+                                to participate in the
+                                activities?</button>
                             <div class="faq-answer" id="faq-answer-registration">
                                 <div class="faq-answer-content">
-                                    Sim. Abriremos as inscrições em uma data próxima ao evento.
-                                    Acompanhe as novidades pelos nossos canais oficiais.
+                                    Yes. We will open registrations on a date close to the event.
+                                    Follow the news through our official channels.
                                 </div>
                             </div>
                         </div>
@@ -1243,14 +1710,14 @@
     <!-- Newsletter Section -->
     <section id="newsletter" class="newsletter-section">
         <div class="container">
-            <h2 data-aos="fade-up">Junte-se à Nossa Jornada</h2>
+            <h2 data-aos="fade-up">Join Our Journey</h2>
             <p data-aos="fade-up" data-aos-delay="100">
-                Receba atualizações exclusivas e seja o primeiro a saber das novidades.
+                Receive exclusive updates and be the first to know about news.
             </p>
             <form class="newsletter-form" action="/newsletter" method="post" data-aos="fade-up" data-aos-delay="200">
-                <input type="email" name="email" placeholder="Seu melhor e-mail" required
-                    aria-label="E-mail para newsletter">
-                <button type="submit">Inscrever-se</button>
+                <input type="email" name="email" placeholder="Your best email" required
+                    aria-label="Email for newsletter">
+                <button type="submit">Subscribe</button>
             </form>
         </div>
     </section>
@@ -1265,18 +1732,18 @@
                         <li><a href="#experiencia">Night Celebrations</a></li>
                         <li><a href="#mouton-beach">Mouton Beach Club</a></li>
                         <li><a href="#villa-mouton">Villa Mouton</a></li>
-                        <li><a href="#musica">Música</a></li>
+                        <li><a href="#musica">Music</a></li>
                         <li><a href="#wellness">Wellness</a></li>
-                        <li><a href="#destino">Destino</a></li>
+                        <li><a href="#destino">Destination</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Informações</h4>
+                    <h4>Information</h4>
                     <ul>
-                        <li><a href="/hospedagem">Hospedagem</a></li>
-                        <li><a href="/como-chegar">Como Chegar</a></li>
-                        <li><a href="#faq">Perguntas Frequentes</a></li>
-                        <li><a href="/contato">Contato</a></li>
+                        <li><a href="/hospedagem">Accommodation</a></li>
+                        <li><a href="/como-chegar">Getting There</a></li>
+                        <li><a href="#faq">Frequently Asked Questions</a></li>
+                        <li><a href="/contato">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1299,7 +1766,7 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Contato</h4>
+                    <h4>Contact</h4>
                     <div class="contact-buttons">
                         <a href="https://api.whatsapp.com/send/?phone=551151995919" target="_blank" rel="noopener"
                             class="contact-btn whatsapp-btn">
@@ -1320,18 +1787,66 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Réveillon Carneiros. Todos os direitos reservados. Uma experiência
+                <p>© 2025 Réveillon Carneiros. All rights reserved. An experience
                     transformadora.</p>
             </div>
         </div>
     </footer>
 
-    <!-- External Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Scripts com defer para não bloquear renderização -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Modern ES6 Modules (Progressive Enhancement) -->
+    <script defer src="../js/main.js"></script>
 
-    <!-- JavaScript File -->
-    <script src="js/main.js" defer></script>
+    <script>
+        // Lazy Loading crítico inline
+        document.addEventListener('DOMContentLoaded', function () {
+            // Lazy load de imagens com placeholders
+            const lazyImages = document.querySelectorAll('img.lazyload');
 
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazyload');
+                            img.classList.add('lazyloaded');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                }, {
+                    rootMargin: '50px 0px',
+                    threshold: 0.01
+                });
+
+                lazyImages.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback para browsers antigos
+                lazyImages.forEach(img => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazyload');
+                    img.classList.add('lazyloaded');
+                });
+            }
+
+        });
+
+        // Inicializa AOS após carregamento
+        window.addEventListener('load', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 700,
+                    once: true,
+                    offset: 50,
+                    disable: 'mobile'
+                });
+            }
+        });
+    </script>
+
+    <!-- Language Detection Script -->
+    <script src="../js/language-detector.js" defer></script>
 </body>
 
 </html>
