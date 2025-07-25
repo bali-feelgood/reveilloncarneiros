@@ -1074,12 +1074,7 @@ const LanguageSelectorController = {
     }
 };
 
-// Import language detector
+// Initialize language selector when DOM loads
 document.addEventListener('DOMContentLoaded', () => {
-    if (typeof LanguageDetector !== 'undefined') {
-        LanguageDetector.init();
-    }
-    
-    // Initialize language selector
     LanguageSelectorController.init();
 });
