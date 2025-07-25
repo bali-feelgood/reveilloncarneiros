@@ -939,6 +939,90 @@ const App = {
    INICIALIZAÇÃO
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
+    // Preloader Inteligente - Remove apenas quando recursos críticos estão prontos
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        const criticalResources = {
+            fonts: false,
+            heroImage: false,
+            css: document.readyState === 'complete'
+        };
+        
+        let minDisplayTime = 800; // Tempo mínimo de exibição
+        const maxWaitTime = 3000; // Timeout de segurança
+        const startTime = performance.now();
+        
+        // Verificar carregamento das fontes
+        if ('fonts' in document) {
+            document.fonts.ready.then(() => {
+                criticalResources.fonts = true;
+                checkReadyToHide();
+            });
+        } else {
+            // Fallback para browsers sem font loading API
+            setTimeout(() => {
+                criticalResources.fonts = true;
+                checkReadyToHide();
+            }, 500);
+        }
+        
+        // Verificar carregamento da imagem hero
+        const heroImage = document.querySelector('.hero-section img[loading="eager"]');
+        if (heroImage) {
+            if (heroImage.complete) {
+                criticalResources.heroImage = true;
+                checkReadyToHide();
+            } else {
+                heroImage.addEventListener('load', () => {
+                    criticalResources.heroImage = true;
+                    checkReadyToHide();
+                });
+            }
+        } else {
+            criticalResources.heroImage = true;
+        }
+        
+        // Verificar se CSS já está carregado
+        if (document.readyState === 'complete') {
+            criticalResources.css = true;
+        } else {
+            window.addEventListener('load', () => {
+                criticalResources.css = true;
+                checkReadyToHide();
+            });
+        }
+        
+        // Função para verificar se pode esconder o preloader
+        function checkReadyToHide() {
+            const allResourcesReady = Object.values(criticalResources).every(ready => ready);
+            const timeElapsed = performance.now() - startTime;
+            
+            if (allResourcesReady && timeElapsed >= minDisplayTime) {
+                hidePreloader();
+            }
+        }
+        
+        // Timeout de segurança
+        setTimeout(() => {
+            hidePreloader();
+        }, maxWaitTime);
+        
+        // Função para esconder o preloader
+        function hidePreloader() {
+            if (!preloader.classList.contains('fade-out')) {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    if (preloader.parentNode) {
+                        preloader.remove();
+                    }
+                }, 1000);
+            }
+        }
+        
+        // Primeira verificação
+        checkReadyToHide();
+    }
+
     App.init();
 });
 
