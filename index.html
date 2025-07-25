@@ -29,10 +29,123 @@
     <meta property="twitter:image" content="https://reveilloncarneiros.com/assets/images/twitter-image.jpg">
 
     <title>Réveillon Carneiros | Born to be Real - Praia dos Carneiros</title>
+    <link rel="alternate" hreflang="pt-BR" href="https://reveilloncarneiros.com/" />
+    <link rel="alternate" hreflang="en" href="https://reveilloncarneiros.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://reveilloncarneiros.com/" />
+
+    <!-- Schema Markup JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Réveillon Carneiros 2026 - Born to be Real",
+        "description": "Uma experiência transformadora de 8 dias em Praia dos Carneiros, Pernambuco. Uma jornada de transformação e celebração onde o tempo pausa para o que realmente importa.",
+        "startDate": "2025-12-26T00:00:00-03:00",
+        "endDate": "2026-01-02T23:59:59-03:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+            "@type": "Place",
+            "name": "Praia dos Carneiros",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Tamandaré",
+                "@region": "Pernambuco",
+                "addressCountry": "BR"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "-8.7255",
+                "longitude": "-35.0956"
+            }
+        },
+        "image": [
+            "https://reveilloncarneiros.com/assets/images/hero/hero-background.jpg",
+            "https://reveilloncarneiros.com/assets/images/og-image.jpg"
+        ],
+        "organizer": {
+            "@type": "Organization",
+            "name": "Réveillon Carneiros",
+            "url": "https://reveilloncarneiros.com",
+            "logo": "https://reveilloncarneiros.com/assets/images/logo-carneiros.svg"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://reveilloncarneiros.com",
+            "priceCurrency": "BRL",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01T00:00:00-03:00"
+        },
+        "performer": [
+            {
+                "@type": "MusicGroup",
+                "name": "Artistas Internacionais",
+                "description": "Line-up exclusivo com artistas nacionais e internacionais"
+            }
+        ],
+        "subEvent": [
+            {
+                "@type": "Event",
+                "name": "AURA - Night Celebration",
+                "description": "A dança invisível das energias"
+            },
+            {
+                "@type": "Event", 
+                "name": "LUAU - Night Celebration",
+                "description": "Conexão ancestral com a natureza"
+            },
+            {
+                "@type": "Event",
+                "name": "AQUA - Night Celebration", 
+                "description": "Fluidez e renovação"
+            },
+            {
+                "@type": "Event",
+                "name": "ASTRAL - Night Celebration",
+                "description": "Transcendência e infinito"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Réveillon Carneiros",
+        "url": "https://reveilloncarneiros.com",
+        "logo": "https://reveilloncarneiros.com/assets/images/logo-carneiros.svg",
+        "description": "Organizadora do maior réveillon de Pernambuco em Praia dos Carneiros",
+        "founder": {
+            "@type": "Person",
+            "name": "Réveillon Carneiros Team"
+        },
+        "foundingDate": "2024",
+        "areaServed": {
+            "@type": "Country",
+            "name": "Brazil"
+        },
+        "sameAs": [
+            "https://www.instagram.com/reveilloncarneiros",
+            "https://www.facebook.com/reveilloncarneiros"
+        ]
+    }
+    </script>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/assets/images/favicon-carneiros.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#6B7A44">
+    <meta name="background-color" content="#848547">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Réveillon Carneiros">
+    <meta name="application-name" content="Réveillon Carneiros">
+    <meta name="msapplication-TileColor" content="#6B7A44">
+    <meta name="msapplication-config" content="/browserconfig.xml">
 
 
     <!-- Preconnect to External Domains -->
@@ -40,10 +153,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!-- Preload de recursos críticos -->
+    <link rel="preload" href="/assets/fonts/Amagro-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/SFProDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/images/hero/hero-background-768.webp" as="image" type="image/webp" media="(max-width: 768px)">
     <link rel="preload" href="css/fonts.css" as="style">
     <link rel="preload" href="css/main.css" as="style">
-    <link rel="preload" href="assets/images/hero/hero-background-1920.jpg" as="image" media="(min-width: 769px)">
-    <link rel="preload" href="assets/images/hero/hero-background-768.jpg" as="image" media="(max-width: 768px)">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/fonts.css">
