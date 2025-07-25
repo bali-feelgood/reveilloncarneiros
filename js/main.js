@@ -944,7 +944,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (preloader) {
         const criticalResources = {
             fonts: false,
-            heroImage: false,
             css: document.readyState === 'complete'
         };
         
@@ -966,21 +965,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
         }
         
-        // Verificar carregamento da imagem hero
-        const heroImage = document.querySelector('.hero-section img[loading="eager"]');
-        if (heroImage) {
-            if (heroImage.complete) {
-                criticalResources.heroImage = true;
-                checkReadyToHide();
-            } else {
-                heroImage.addEventListener('load', () => {
-                    criticalResources.heroImage = true;
-                    checkReadyToHide();
-                });
-            }
-        } else {
-            criticalResources.heroImage = true;
-        }
+        // Heroimage check removido - não existe no HTML
         
         // Verificar se CSS já está carregado
         if (document.readyState === 'complete') {
