@@ -575,7 +575,10 @@
     <!-- Preload de recursos críticos com prioridade -->
     <link rel="preload" href="/assets/fonts/Amagro-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/SFProDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Smart preload - only load needed hero image -->
     <link rel="preload" href="/assets/images/hero/hero-background-768.webp" as="image" type="image/webp" media="(max-width: 768px)">
+    <link rel="preload" href="/assets/images/hero/hero-background.webp" as="image" type="image/webp" media="(min-width: 769px) and (max-width: 1440px)">
+    <link rel="preload" href="/assets/images/hero/hero-background-high.webp" as="image" type="image/webp" media="(min-width: 1441px)">
 
     <!-- CSS Files com carregamento assíncrono -->
     <link rel="preload" href="../css/fonts.css" as="style">
