@@ -454,6 +454,8 @@ const VillaMoutonController = {
             'suporte': basePath + 'suporte.jpg',
             'default': basePath + 'default.jpg'
         };
+        
+        console.log('🏰 Villa Mouton: imageMap criado:', this.imageMap);
 
         // Pré-carrega imagens após 3 segundos
         setTimeout(() => this.preloadImages(), 3000);
@@ -497,6 +499,8 @@ const VillaMoutonController = {
     },
 
     changeImage(newSrc) {
+        console.log('🏰 Villa Mouton: Tentando trocar imagem para:', newSrc);
+        
         // Transição mais rápida e natural
         this.mainImage.style.transition = 'opacity 150ms ease-out';
         this.mainImage.style.opacity = '0';
@@ -504,7 +508,12 @@ const VillaMoutonController = {
         setTimeout(() => {
             this.mainImage.src = newSrc;
             this.mainImage.onload = () => {
+                console.log('✅ Villa Mouton: Imagem carregada com sucesso:', newSrc);
                 this.mainImage.style.opacity = '1';
+            };
+            this.mainImage.onerror = () => {
+                console.error('❌ Villa Mouton: Falha ao carregar imagem:', newSrc);
+                this.mainImage.style.opacity = '1'; // Mostra o que tinha antes
             };
         }, 150);
     }
