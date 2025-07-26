@@ -640,16 +640,17 @@ const WellnessController = {
             toggle.addEventListener('click', () => {
                 const category = item.closest('.wellness-category');
                 const otherItems = category.querySelectorAll('.activity-item');
+                const isCurrentlyActive = item.classList.contains('active');
 
-                // Fecha outros itens da mesma categoria
+                // Fecha todos os itens da mesma categoria
                 otherItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
+                    otherItem.classList.remove('active');
                 });
 
-                // Toggle o item atual
-                item.classList.toggle('active');
+                // Se não estava ativo, ativa o atual. Se estava ativo, deixa fechado
+                if (!isCurrentlyActive) {
+                    item.classList.add('active');
+                }
             });
         });
     }

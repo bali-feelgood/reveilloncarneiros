@@ -115,7 +115,12 @@ class MusicCarouselV2 {
         if (!this.state.isDragging) return;
         
         const deltaX = e.clientX - this.dragData.startX;
-        this.state.translateX = this.dragData.startTranslate + deltaX;
+        const newTranslateX = this.dragData.startTranslate + deltaX;
+        
+        // Aplicar limites durante o drag usando cálculo preciso
+        const maxTranslate = this.getMaxTranslate();
+        this.state.translateX = Math.max(maxTranslate, Math.min(0, newTranslateX));
+        
         this.updateTransform();
         
         this.dragData.velocityHistory.push({
@@ -182,18 +187,19 @@ class MusicCarouselV2 {
         }
         
         const movement = this.state.speed * this.state.direction;
-        const maxTranslate = -(this.wrapper.scrollWidth - this.container.clientWidth);
+        const maxTranslate = this.getMaxTranslate();
         
-        if (this.state.translateX <= maxTranslate + this.config.edgeBuffer && this.state.direction === -1) {
+        // Limites mais precisos - sem edgeBuffer
+        if (this.state.translateX <= maxTranslate && this.state.direction === -1) {
             this.state.direction = 1;
-            // Bounce contínuo - sem pausa
-        } else if (this.state.translateX >= -this.config.edgeBuffer && this.state.direction === 1) {
+            this.state.translateX = maxTranslate; // Força ficar no limite exato
+        } else if (this.state.translateX >= 0 && this.state.direction === 1) {
             this.state.direction = -1;
-            // Bounce contínuo - sem pausa
+            this.state.translateX = 0; // Força ficar no limite exato
+        } else {
+            // Só move se não estiver nos limites
+            this.state.translateX += movement;
         }
-        
-        // Sempre move, independente da direção
-        this.state.translateX += movement;
         
         this.updateTransform();
         this.animationId = requestAnimationFrame(() => this.animate());
@@ -201,6 +207,14 @@ class MusicCarouselV2 {
     
     updateTransform() {
         this.wrapper.style.transform = `translateX(${this.state.translateX}px)`;
+    }
+    
+    getMaxTranslate() {
+        const cards = this.wrapper.children;
+        const totalCardWidth = Array.from(cards).reduce((total, card) => {
+            return total + card.offsetWidth + parseFloat(getComputedStyle(card).marginRight || 0);
+        }, 0);
+        return -(totalCardWidth - this.container.clientWidth + 32); // +32 para padding
     }
     
     // Removido: pauseAtEdge() - agora é bounce contínuo
