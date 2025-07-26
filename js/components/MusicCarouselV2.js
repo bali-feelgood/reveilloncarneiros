@@ -18,7 +18,6 @@ class MusicCarouselV2 {
         };
         
         this.config = {
-            pauseAtEdge: 2000,
             edgeBuffer: 10,
             velocityDecay: 0.95,
             minVelocity: 0.5,
@@ -187,13 +186,14 @@ class MusicCarouselV2 {
         
         if (this.state.translateX <= maxTranslate + this.config.edgeBuffer && this.state.direction === -1) {
             this.state.direction = 1;
-            this.pauseAtEdge();
+            // Bounce contínuo - sem pausa
         } else if (this.state.translateX >= -this.config.edgeBuffer && this.state.direction === 1) {
             this.state.direction = -1;
-            this.pauseAtEdge();
-        } else {
-            this.state.translateX += movement;
+            // Bounce contínuo - sem pausa
         }
+        
+        // Sempre move, independente da direção
+        this.state.translateX += movement;
         
         this.updateTransform();
         this.animationId = requestAnimationFrame(() => this.animate());
@@ -203,12 +203,7 @@ class MusicCarouselV2 {
         this.wrapper.style.transform = `translateX(${this.state.translateX}px)`;
     }
     
-    pauseAtEdge() {
-        this.state.isPlaying = false;
-        setTimeout(() => {
-            this.state.isPlaying = true;
-        }, this.config.pauseAtEdge);
-    }
+    // Removido: pauseAtEdge() - agora é bounce contínuo
     
     startAnimation() {
         if (this.animationId) cancelAnimationFrame(this.animationId);
