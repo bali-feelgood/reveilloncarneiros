@@ -28,6 +28,36 @@
     <meta property="twitter:description" content="Uma jornada de transformação e celebração. 26 dezembro a 02 janeiro.">
     <meta property="twitter:image" content="https://reveilloncarneiros.com/assets/images/twitter-image.jpg">
 
+    <!-- Fast Language Detection - Before any heavy resources -->
+    <script>
+    (function() {
+        // Only redirect on homepage to avoid loops
+        if (window.location.pathname !== '/') return;
+        
+        // Only redirect once per session
+        if (sessionStorage.getItem('lang-redirect-done')) return;
+        
+        // Check saved preference first
+        const saved = localStorage.getItem('preferred-language');
+        if (saved && saved === 'en') {
+            sessionStorage.setItem('lang-redirect-done', 'true');
+            window.location.href = '/en/';
+            return;
+        }
+        
+        // If no saved preference, check browser language
+        if (!saved) {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang && browserLang.startsWith('en')) {
+                sessionStorage.setItem('lang-redirect-done', 'true');
+                localStorage.setItem('preferred-language', 'en');
+                window.location.href = '/en/';
+                return;
+            }
+        }
+    })();
+    </script>
+
     <title>Réveillon Carneiros | Born to be Real - Praia dos Carneiros</title>
     <link rel="alternate" hreflang="pt-BR" href="https://reveilloncarneiros.com/" />
     <link rel="alternate" hreflang="en" href="https://reveilloncarneiros.com/en/" />
