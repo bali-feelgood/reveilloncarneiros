@@ -445,7 +445,7 @@ const VillaMoutonController = {
         if (!this.mainImage || !this.imageContainer) return;
 
         // Detecta se está no subdiretório /en/ para ajustar paths
-        const basePath = window.location.pathname.includes('/en/') ? '../assets/images/villa-mouton/' : 'assets/images/villa-mouton/';
+        const basePath = window.location.pathname.includes('/en/') ? '../assets/images/villa-mouton/' : '/assets/images/villa-mouton/';
         
         this.imageMap = {
             'beleza': basePath + 'beleza.jpg',
