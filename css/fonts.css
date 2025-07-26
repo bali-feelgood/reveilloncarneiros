@@ -6,8 +6,8 @@
 /* AMAGRO - Fonte decorativa principal */
 @font-face {
     font-family: 'Amagro';
-    src: url('../assets/fonts/Amagro-bold.woff2') format('woff2'),
-         url('../assets/fonts/Amagro-bold.woff') format('woff');
+    src: url('/assets/fonts/Amagro-bold.woff2') format('woff2'),
+         url('/assets/fonts/Amagro-bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -16,8 +16,8 @@
 /* SF Pro Display - Apenas os pesos utilizados */
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('../assets/fonts/SFProDisplay-Regular.woff2') format('woff2'),
-         url('../assets/fonts/SFProDisplay-Regular.woff') format('woff');
+    src: url('/assets/fonts/SFProDisplay-Regular.woff2') format('woff2'),
+         url('/assets/fonts/SFProDisplay-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -25,8 +25,8 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('../assets/fonts/SFProDisplay-Medium.woff2') format('woff2'),
-         url('../assets/fonts/SFProDisplay-Medium.woff') format('woff');
+    src: url('/assets/fonts/SFProDisplay-Medium.woff2') format('woff2'),
+         url('/assets/fonts/SFProDisplay-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -34,8 +34,8 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('../assets/fonts/SFProDisplay-Semibold.woff2') format('woff2'),
-         url('../assets/fonts/SFProDisplay-Semibold.woff') format('woff');
+    src: url('/assets/fonts/SFProDisplay-Semibold.woff2') format('woff2'),
+         url('/assets/fonts/SFProDisplay-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;

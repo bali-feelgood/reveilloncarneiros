@@ -20,7 +20,7 @@
     <meta property="og:description"
         content="Uma jornada de transformação e celebração onde o tempo pausa para o que realmente importa.">
     <meta property="og:image" content="https://reveilloncarneiros.com/assets/images/og-image.jpg">
-
+    
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://reveilloncarneiros.com/">
@@ -147,47 +147,480 @@
     <meta name="msapplication-TileColor" content="#6B7A44">
     <meta name="msapplication-config" content="/browserconfig.xml">
 
-
     <!-- Preconnect to External Domains -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-    <!-- Preload de recursos críticos -->
+    <!-- Critical CSS Inline Expandido -->
+    <style>
+        /* Reset crítico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        /* Variáveis críticas */
+        :root {
+            --color-sand: #EEE8E3;
+            --color-earth: #848547;
+            --color-charcoal: #1F1F1F;
+            --color-white: #FFFFFF;
+            --font-primary: 'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-secondary: 'Amagro', 'EB Garamond', serif
+        }
+
+        /* Base */
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--color-charcoal);
+            background: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden
+        }
+
+        /* Hero essencial para evitar CLS */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: #000
+        }
+
+        .hero-content {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: var(--color-white);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            z-index: 1
+        }
+
+        .hero-title {
+            font-family: var(--font-secondary);
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+            text-transform: uppercase
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            opacity: 0.9
+        }
+
+        /* Header crítico */
+        .header-habitas {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1050;
+            transition: all 0.5s
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem
+        }
+
+        .logo {
+            height: 45px
+        }
+
+        .logo-svg {
+            height: 45px;
+            width: 45px;
+            fill: #fff
+        }
+
+
+        /* Font-face crítico */
+        @font-face {
+            font-family: 'Amagro';
+            src: url('/assets/fonts/Amagro-bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap
+        }
+
+        @font-face {
+            font-family: 'SF Pro Display';
+            src: url('/assets/fonts/SFProDisplay-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap
+        }
+
+        /* Anti-CLS - Define tamanhos para prevenir layout shift */
+        .experience-card {
+            aspect-ratio: 4/5
+        }
+
+        .experience-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .mouton-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .destination-slide {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .artist-slide {
+            width: 410px;
+            height: 530px
+        }
+
+        img.lazyload {
+            background: #f0f0f0
+        }
+
+        /* Container crítico */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        /* Manifesto essencial */
+        .manifesto-section {
+            background: var(--color-sand);
+            padding: 8rem 0
+        }
+
+        .manifesto-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-earth);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.85
+        }
+
+        .manifesto-title {
+            font-family: var(--font-secondary);
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: var(--color-charcoal)
+        }
+
+        .manifesto-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--color-charcoal);
+            opacity: 0.9
+        }
+
+        /* Experience cards estruturais */
+        .experiences-section {
+            padding: 8rem 0;
+            background: var(--color-white)
+        }
+
+        .experiences-grid {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 2rem 0
+        }
+
+        .experience-card {
+            position: relative;
+            overflow: hidden;
+            scroll-snap-align: center;
+            cursor: pointer;
+            background: #000;
+            min-width: 300px;
+            flex: 0 0 auto
+        }
+
+        .experience-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+            color: var(--color-white)
+        }
+
+        /* Mobile critical */
+        @media (max-width:768px) {
+            .hero-title {
+                font-size: 2rem
+            }
+
+            .hero-subtitle {
+                font-size: 1rem
+            }
+
+            .header-container {
+                padding: 1rem 1.5rem
+            }
+
+            .logo-svg {
+                height: 38px;
+                width: 38px
+            }
+
+            .manifesto-section {
+                padding: 4rem 0
+            }
+
+            .manifesto-content {
+                padding: 0 1.5rem
+            }
+
+            .manifesto-title {
+                font-size: 1.75rem;
+                line-height: 1.3;
+                margin-bottom: 1.5rem
+            }
+
+            .manifesto-text {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                margin-bottom: 1.5rem
+            }
+
+            .experiences-section {
+                padding: 4rem 0
+            }
+
+            .experience-card {
+                min-width: 80vw
+            }
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin-left: 1rem;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .current-flag {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            right: 0;
+            background: rgba(31, 31, 31, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            min-width: 140px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .language-selector:hover .lang-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .lang-option:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .lang-option.active {
+            background: rgba(255,255,255,0.05);
+            pointer-events: none;
+        }
+
+        .lang-option img {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .language-selector {
+                margin-left: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .lang-toggle {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .lang-dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                margin-top: 0.5rem;
+                display: none;
+            }
+            
+            .language-selector.active .lang-dropdown {
+                display: block;
+            }
+        }
+    </style>
+
+    <!-- Preload de recursos críticos com prioridade -->
     <link rel="preload" href="/assets/fonts/Amagro-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/SFProDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/images/hero/hero-background-768.webp" as="image" type="image/webp" media="(max-width: 768px)">
+
+    <!-- CSS Files com carregamento assíncrono -->
     <link rel="preload" href="css/fonts.css" as="style">
     <link rel="preload" href="css/main.css" as="style">
+    <link rel="stylesheet" href="css/fonts.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/main.css">
+    </noscript>
+
+    <!-- External CSS com carregamento assíncrono -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style">
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-
-    <!-- Preloader Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    </noscript>
+    
     <style>
-        /* Minimal Preloader */
-        #preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#6B7A44 0%,#848547 100%);z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity 1s ease-out;opacity:1}
-        #preloader.fade-out{opacity:0}
-        .preloader-content{text-align:center;display:flex;flex-direction:column;align-items:center;gap:3rem}
-        .preloader-logo{width:80px;height:auto;opacity:0.9;color:white;animation:logoFloat 6s ease-in-out infinite}
-        .preloader-progress{width:120px;height:2px;background:rgba(255,255,255,0.15);border-radius:1px;overflow:hidden;position:relative}
-        .preloader-progress::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,0.8);border-radius:1px;animation:progressMove 2.5s ease-in-out infinite}
-        @keyframes logoFloat{0%,100%{transform:translateY(0);opacity:0.9}50%{transform:translateY(-3px);opacity:1}}
-        @keyframes progressMove{0%{left:-100%}100%{left:100%}}
+/* Language Selector */
+.language-selector{position:relative;margin-left:0.75rem}
+.lang-toggle{display:flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:20px;color:white;cursor:pointer;transition:all 0.25s ease;font-size:0.8rem;font-weight:400;letter-spacing:0.02em;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.lang-toggle:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.25);transform:translateY(-1px)}
+.current-flag{width:16px;height:12px;object-fit:cover;border-radius:1px;box-shadow:0 1px 2px rgba(0,0,0,0.15)}
+.lang-dropdown{position:absolute;top:calc(100% + 0.4rem);right:0;background:rgba(20,20,20,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);border-radius:6px;min-width:120px;opacity:0;visibility:hidden;transform:translateY(-8px) scale(0.95);transition:all 0.25s cubic-bezier(0.4,0,0.2,1);overflow:hidden;z-index:1001;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+.language-selector:hover .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.lang-option{display:flex;align-items:center;gap:0.6rem;padding:0.6rem 0.8rem;color:rgba(255,255,255,0.9);text-decoration:none;transition:all 0.2s ease;font-size:0.8rem;font-weight:400}
+.lang-option:hover{background:rgba(255,255,255,0.08);color:white}
+.lang-option.active{background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.6);pointer-events:none}
+.lang-option img{width:16px;height:12px;object-fit:cover;border-radius:1px;box-shadow:0 1px 2px rgba(0,0,0,0.15)}
+
+/* Mobile Menu Refinements */
+@media(max-width:768px){
+.language-selector{margin-left:0;margin-bottom:0.6rem}
+.lang-toggle{justify-content:center;width:100%;padding:0.45rem 1rem;font-size:0.8rem}
+.lang-dropdown{position:static;opacity:1;visibility:visible;transform:none;margin-top:0.3rem;display:none;border-radius:4px}
+.language-selector.active .lang-dropdown{display:block}
+.lang-option{padding:0.6rem 1rem;font-size:0.8rem}
+
+/* Mobile Menu Header Improvements */
+.header-container{padding:0.8rem 1.2rem}
+.mobile-menu-toggle{padding:0.4rem;width:40px;height:40px}
+.mobile-menu-toggle span{width:20px;height:1.5px;margin:4px auto}
+.nav-menu{background:linear-gradient(135deg,rgba(107,122,68,0.98) 0%,rgba(132,133,71,0.95) 100%);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);padding:3.5rem 1.8rem 2.5rem;gap:0.2rem;justify-content:flex-start;overflow-y:auto;max-height:100vh}
+.nav-menu li{margin-bottom:0.3rem}
+.nav-link{font-size:1.1rem;padding:0.6rem 1rem;border-radius:6px}
+.nav-menu .dropdown-toggle{padding:0.6rem 1.8rem;font-size:1rem;border-radius:25px;margin-top:0.5rem}
+.nav-menu .dropdown-menu{position:static;opacity:1;visibility:visible;max-height:none;margin-top:0.6rem;width:80%;max-width:220px;border-radius:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2)}
+.nav-menu .dropdown-menu a{padding:0.7rem 1rem;font-size:0.9rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+.nav-menu .dropdown-menu a:last-child{border-bottom:none}
+}
+
+/* Minimal Preloader */
+#preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#6B7A44 0%,#848547 100%);z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity 1s ease-out;opacity:1}
+#preloader.fade-out{opacity:0}
+.preloader-content{text-align:center;display:flex;flex-direction:column;align-items:center;gap:3rem}
+.preloader-logo{width:80px;height:auto;opacity:0.9;color:white;animation:logoFloat 6s ease-in-out infinite}
+.preloader-progress{width:120px;height:2px;background:rgba(255,255,255,0.15);border-radius:1px;overflow:hidden;position:relative}
+.preloader-progress::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,0.8);border-radius:1px;animation:progressMove 2.5s ease-in-out infinite}
+@keyframes logoFloat{0%,100%{transform:translateY(0);opacity:0.9}50%{transform:translateY(-3px);opacity:1}}
+@keyframes progressMove{0%{left:-100%}100%{left:100%}}
     </style>
 </head>
 
+
 <body>
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="preloader-content">
             <svg class="preloader-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280.83 291.53" aria-hidden="true">
                 <path fill="currentColor" d="M139.09,7.91c13.69,0,25.49,14.68,38.58,18.76,13.02,4.06,31.2-1.41,42.56,6.65,10.96,7.78,11.87,26.62,20.32,37.99,8.45,11.37,26.24,17.66,30.53,30.39,4.45,13.2-6.02,29.04-5.88,42.67.14,13.77,10.9,29.38,6.8,42.54-4.06,13.02-21.74,19.74-29.8,31.09-7.78,10.96-8.16,29.93-19.52,38.38-11.37,8.45-29.64,3.35-42.38,7.64-13.2,4.45-24.72,19.45-38.36,19.59-.07,0-.13,0-.19,0-13.69,0-25.49-14.68-38.58-18.76-13.02-4.06-31.2,1.41-42.56-6.65-10.96-7.78-11.86-26.62-20.32-37.99-8.45-11.37-26.24-17.66-30.53-30.39-4.45-13.2,6.02-29.03,5.88-42.67-.14-13.77-10.9-29.38-6.8-42.54,4.06-13.02,21.73-19.74,29.8-31.09,7.78-10.96,8.16-29.93,19.52-38.38,11.37-8.45,29.64-3.35,42.38-7.65,13.2-4.45,24.72-19.44,38.36-19.58h.19M139.09,0c-.09,0-.18,0-.28,0-10.41.11-19.18,6.32-26.91,11.8-4.87,3.45-9.48,6.71-13.89,8.2-4.11,1.38-9.55,1.55-15.31,1.71-9.64.28-20.56.61-29.26,7.08-8.7,6.47-12.16,16.84-15.2,25.99-1.82,5.47-3.54,10.63-6.05,14.16-2.7,3.8-7.15,7.27-11.86,10.94-7.47,5.83-15.94,12.43-19.04,22.38-3.13,10.04.1,20.33,2.95,29.42,1.77,5.65,3.45,10.99,3.5,15.55.05,4.47-1.51,9.78-3.15,15.4-2.69,9.2-5.73,19.62-2.32,29.72,3.27,9.7,11.44,15.78,19.34,21.67,4.87,3.63,9.47,7.05,12.34,10.92,2.87,3.86,4.83,9.25,6.9,14.96,3.36,9.26,6.84,18.83,15.18,24.76,8.69,6.17,19.55,6.26,29.13,6.33,5.86.05,11.39.09,15.65,1.42,4.36,1.36,8.99,4.5,13.89,7.83,7.8,5.29,16.65,11.29,27.04,11.29h.28c10.41-.11,19.18-6.32,26.91-11.8,4.87-3.45,9.48-6.72,13.89-8.2,4.1-1.38,9.55-1.55,15.31-1.71,9.64-.28,20.56-.61,29.26-7.08,8.7-6.47,12.16-16.84,15.2-25.99,1.82-5.47,3.54-10.63,6.05-14.16,2.7-3.8,7.15-7.27,11.86-10.94,7.47-5.83,15.94-12.43,19.05-22.38,3.13-10.04-.1-20.33-2.95-29.41-1.77-5.65-3.45-10.99-3.5-15.56-.05-4.46,1.51-9.77,3.15-15.4,2.69-9.2,5.73-19.62,2.32-29.72-3.27-9.7-11.44-15.79-19.34-21.67-4.87-3.63-9.47-7.05-12.34-10.92-2.87-3.86-4.83-9.25-6.9-14.96-3.36-9.26-6.84-18.83-15.18-24.76-8.69-6.17-19.55-6.26-29.13-6.33-5.86-.05-11.39-.09-15.65-1.42-4.36-1.36-8.99-4.5-13.89-7.83-7.8-5.29-16.65-11.29-27.04-11.29" />
-                <path fill="currentColor" d="M237.33,109.67c-12.44-8.95-25.54-10.48-41.24-4.81-1.66.6-3.17,1.33-4.54,2.17-15.14-9.66-32.58-14.84-50.64-15.03h0c-.17,0-.33,0-.5,0h-.5c-18.05.19-35.49,5.37-50.64,15.03-1.37-.84-2.88-1.57-4.54-2.17-15.7-5.67-28.8-4.14-41.24,4.81-6.36,4.57-8.71,11.54-6.16,18.18,2.72,7.06,10.17,11.37,18.14,10.48,5.54-.62,13.49-4.37,24.31-11.47,3.18-2.09,6.1-4.13,8.44-5.83.75,1.28,1.41,2.74,1.99,4.43,2.02,5.8,2.79,13.33,3.54,20.61.22,2.14.45,4.35.7,6.51.22,1.83.41,4.07.62,6.66.88,10.46,2.2,26.28,7.94,39.46,3.32,7.63,7.8,13.63,13.3,17.83,6.55,5,14.59,7.53,23.9,7.53s17-2.83,23.57-8.42c5.36-4.56,9.83-11.01,13.28-19.18,5.96-14.11,7.79-30.64,8.89-40.52.14-1.22.26-2.35.38-3.36.26-2.16.48-4.37.7-6.51.75-7.28,1.52-14.81,3.54-20.61.59-1.68,1.24-3.15,1.99-4.43,2.34,1.69,5.26,3.74,8.44,5.83,10.82,7.1,18.77,10.85,24.31,11.47.69.08,1.38.11,2.06.11,7.16,0,13.59-4.15,16.07-10.6,2.56-6.64.2-13.61-6.16-18.18M54.29,127.64c-3.63.4-6.13-1.61-6.92-3.66-.96-2.5.78-4.42,2.41-5.6,5.71-4.12,11.36-6.14,17.63-6.14,3.66,0,7.54.69,11.76,2.05-8.86,6.2-19.64,12.75-24.88,13.34M176.36,144.97c-.22,2.1-.44,4.26-.69,6.34-.12,1.04-.25,2.2-.39,3.45-1.03,9.3-2.76,24.86-8.11,37.52-5.98,14.15-14.79,21.03-26.94,21.03-7,0-12.68-1.74-17.38-5.32-4.04-3.08-7.39-7.65-9.97-13.58-5.03-11.56-6.22-25.72-7.08-36.06-.22-2.69-.42-5.02-.66-7.03-.25-2.08-.47-4.25-.69-6.34-1.08-10.47-2.25-21.84-7.41-30.12,13.08-7.85,27.98-12.03,43.36-12.11,15.39.09,30.28,4.26,43.36,12.11-5.16,8.28-6.33,19.65-7.41,30.12M233.45,123.99c-.79,2.04-3.29,4.06-6.92,3.66-5.24-.58-16.02-7.14-24.88-13.34,11.45-3.7,20.34-2.44,29.39,4.08,1.63,1.17,3.37,3.1,2.41,5.6" />
+                <path fill="currentColor" d="M237.33,109.67c-12.44-8.95-25.54-10.48-41.24-4.81-1.66.6-3.17,1.33-4.54,2.17-15.14-9.66-32.58-14.84-50.64-15.03h0c-.17,0-.33,0-.5,0h-.5c-18.05.19-35.49,5.37-50.64,15.03-1.37-.84-2.88-1.57-4.54-2.17-15.7-5.67-28.8-4.14-41.24,4.81-6.36,4.57-8.71,11.54-6.16,18.18,2.72,7.06,10.17,11.37,18.14,10.48,5.54-.62,13.49-4.37,24.31-11.47,3.18-2.09,6.1-4.13,8.44-5.83.75,1.28,1.41,2.74,1.99,4.43,2.02,5.8,2.79,13.33,3.54,20.61.22,2.14.45,4.35.7,6.51.22,1.83.41,4.07.62,6.66.88,10.46,2.2,26.28,7.94,39.46,3.32,7.63,7.8,13.63,13.3,17.83,6.55,5,14.59,7.53,23.9,7.53s17-2.83,23.57-8.42c5.36-4.56,9.83-11.01,13.28-19.18,5.96-14.11,7.79-30.64,8.89-40.52.14-1.22.26-2.35.38-3.36.26-2.16.48-4.37.7-6.51.75-7.28,1.52-14.81,3.54-20.61.59-1.68,1.24-3.15,1.99-4.43,2.34,1.69,5.26,3.74,8.44,5.83,10.82,7.1,18.77,10.85,24.31,11.47.69.08,1.38.11,2.06.11,7.16,0,13.59-4.15,16.07-10.6,2.56-6.64.2-13.61-6.16-18.18M54.29,127.64c-3.63.4-6.13-1.61-6.92-3.66-.96-2.5.78-4.42,2.41-5.6,5.71-4.12,11.36-6.14,17.63-6.14,3.66,0,7.54.69,11.76,2.05-8.86,6.2-19.64,12.75-24.88,13.34M176.36,144.97c-.22,2.1-.44,4.26-.69,6.34-.12,1.04-.25,2.2-.39,3.45-1.03,9.3-2.76,24.86-8.11,37.52-5.98,14.15-14.79,21.03-26.94,21.03-7,0-12.68-1.74-17.38-5.32-4.04-3.08-7.39-7.65-9.97-13.58-5.03-11.56-6.22-25.72-7.08-36.06-.22-2.69-.42-5.02-.66-7.03-.25-2.08-.47-4.25-.69-6.34-1.08-10.47-2.25-21.84-7.41-30.12,13.08-7.85,27.98-12.03,43.36-12.11,15.39.09,30.28,4.26,43.36,12.11-5.16,8.28-6.33,19.65-7.41,30.12M233.45,123.99c-.79,2.04-3.29,4.06-6.92,3.66-5.24-.58-16.02-7.14-24.88-13.34,11.45-3.7,20.34-2.44,29.39,4.08,1.63,1.17,3.37,3.10,2.41,5.6" />
             </svg>
             
             <div class="preloader-progress"></div>
@@ -224,6 +657,23 @@
                     <li><a href="#destino" class="nav-link">Destino</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
                     <li><a href="#footer" class="nav-link">Contato</a></li>
+                    <!-- Language Selector -->
+                    <li class="language-selector">
+                        <button class="lang-toggle" aria-label="Escolher idioma">
+                            <img src="https://flagcdn.com/w20/br.png" alt="PT" class="current-flag">
+                            <span>PT</span>
+                        </button>
+                        <div class="lang-dropdown">
+                            <a href="/" class="lang-option active">
+                                <img src="https://flagcdn.com/w20/br.png" alt="Português">
+                                Português
+                            </a>
+                            <a href="/en/" class="lang-option">
+                                <img src="https://flagcdn.com/w20/us.png" alt="English">
+                                English
+                            </a>
+                        </div>
+                    </li>
                     <li>
                         <div class="dropdown">
                             <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Comprar</button>
@@ -247,11 +697,22 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section hero-habitas" role="main">
-        <!-- Hero with background image -->
-        <div class="hero-image"
-            style="background-image: url('assets/images/hero/hero-background.jpg'); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: -1;"
-            role="img" aria-label="Praia dos Carneiros ao pôr do sol">
-        </div>
+        <picture class="hero-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+            <source srcset="/assets/images/hero/hero-background-768.webp 768w,
+                            /assets/images/hero/hero-background.webp 1024w,
+                            /assets/images/hero/hero-background-high.webp 1920w"
+                    sizes="(max-width: 768px) 100vw, 100vw"
+                    type="image/webp">
+            <source srcset="/assets/images/hero/hero-background-768.jpg 768w,
+                            /assets/images/hero/hero-background.jpg 1024w,
+                            /assets/images/hero/hero-background-high.jpg 1920w"
+                    sizes="(max-width: 768px) 100vw, 100vw">
+            <img src="/assets/images/hero/hero-background.jpg" alt="Performer - born to be real"
+                style="width: 100%; height: 100%; object-fit: cover;" 
+                loading="eager" 
+                fetchpriority="high"
+                onerror="this.style.backgroundColor='#1a1a1a'; console.error('Hero image failed to load');">
+        </picture>
 
         <div class="hero-content">
             <h1 class="hero-title">Born to be Real</h1>
@@ -298,12 +759,12 @@
                 <div class="experiences-grid" id="experiences-carousel">
                     <!-- AURA - 27 DEZ -->
                     <article class="experience-card" data-celebration="aura" data-aos="fade-up" data-aos-delay="200">
-                        <img src="assets/images/night-celebrations/aura.jpg" alt="AURA - A dança invisível das energias"
-                            loading="lazy">
+                        <img src="/assets/images/night-celebrations/aura.jpg"
+                            alt="AURA - A dança invisível das energias" decoding="async">
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>AURA</h3>
-                                <span class="experience-date">27.Dec</span>
+                                <span class="experience-date">27.Dez</span>
                             </div>
                             <p>A dança invisível das energias. Uma celebração da vibração única de cada ser.</p>
                         </div>
@@ -311,12 +772,16 @@
 
                     <!-- LUAU - 28 DEZ -->
                     <article class="experience-card" data-celebration="luau" data-aos="fade-up" data-aos-delay="300">
-                        <img src="assets/images/night-celebrations/luau.jpg" alt="LUAU - Ao redor do fogo"
-                            loading="lazy">
+                        <picture>
+                            <source srcset="/assets/images/night-celebrations/luau.webp" type="image/webp">
+                            <img src="/assets/images/night-celebrations/luau.jpg" alt="LUAU - Ao redor do fogo"
+                                decoding="async"
+                                onerror="this.src='/assets/images/placeholder.jpg'; console.error('Failed to load:', this.src)">
+                        </picture>
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>LUAU</h3>
-                                <span class="experience-date">28.Dec</span>
+                                <span class="experience-date">28.Dez</span>
                             </div>
                             <p>Ao redor do fogo, criamos memórias. União do mar, lua e música brasileira.</p>
                         </div>
@@ -324,12 +789,16 @@
 
                     <!-- AQUA - 29 DEZ -->
                     <article class="experience-card" data-celebration="aqua" data-aos="fade-up" data-aos-delay="400">
-                        <img src="assets/images/night-celebrations/aqua.jpg" alt="AQUA - Fluidez e renovação"
-                            loading="lazy">
+                        <picture>
+                            <source srcset="/assets/images/night-celebrations/aqua.webp" type="image/webp">
+                            <img src="/assets/images/night-celebrations/aqua.jpg" alt="AQUA - Fluidez e renovação"
+                                decoding="async"
+                                onerror="this.src='/assets/images/placeholder.jpg'; console.error('Failed to load:', this.src)">
+                        </picture>
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>AQUA</h3>
-                                <span class="experience-date">29.Dec</span>
+                                <span class="experience-date">29.Dez</span>
                             </div>
                             <p>Fluidez e renovação. Celebramos as águas tropicais de Carneiros.</p>
                         </div>
@@ -337,12 +806,16 @@
 
                     <!-- ASTRAL - 30 DEZ -->
                     <article class="experience-card" data-celebration="astral" data-aos="fade-up" data-aos-delay="500">
-                        <img src="assets/images/night-celebrations/astral.jpg" alt="ASTRAL - O astro rei nos energiza"
-                            loading="lazy">
+                        <picture>
+                            <source srcset="/assets/images/night-celebrations/astral.webp" type="image/webp">
+                            <img src="/assets/images/night-celebrations/astral.jpg"
+                                alt="ASTRAL - O astro rei nos energiza" loading="lazy" decoding="async"
+                                onerror="this.src='/assets/images/placeholder.jpg'; console.error('Failed to load:', this.src)">
+                        </picture>
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>ASTRAL</h3>
-                                <span class="experience-date">30.Dec</span>
+                                <span class="experience-date">30.Dez</span>
                             </div>
                             <p>O astro rei nos energiza. Celebração do sol tropical e do gingado brasileiro.</p>
                         </div>
@@ -351,12 +824,12 @@
                     <!-- RÉVEILLON - 31 DEZ -->
                     <article class="experience-card" data-celebration="reveillon" data-aos="fade-up"
                         data-aos-delay="600">
-                        <img src="assets/images/night-celebrations/reveillon.jpg" alt="RÉVEILLON - O ápice da jornada"
-                            loading="lazy">
+                        <img src="/assets/images/night-celebrations/reveillon.jpg"
+                            alt="RÉVEILLON - O ápice da jornada" loading="lazy" decoding="async" >
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>RÉVEILLON</h3>
-                                <span class="experience-date">31.Dec</span>
+                                <span class="experience-date">31.Dez</span>
                             </div>
                             <p>O ápice da jornada. Todos os elementos unidos para celebrar um novo ciclo.</p>
                         </div>
@@ -364,8 +837,12 @@
 
                     <!-- FLORA - 02 JAN -->
                     <article class="experience-card" data-celebration="flora" data-aos="fade-up" data-aos-delay="700">
-                        <img src="assets/images/night-celebrations/flora.jpg" alt="FLORA - A natureza que brota"
-                            loading="lazy">
+                        <picture>
+                            <source srcset="/assets/images/night-celebrations/flora.webp" type="image/webp">
+                            <img src="/assets/images/night-celebrations/flora.jpg" alt="FLORA - A natureza que brota"
+                                loading="lazy" decoding="async"
+                                onerror="this.src='/assets/images/placeholder.jpg'; console.error('Failed to load:', this.src)">
+                        </picture>
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>FLORA</h3>
@@ -383,11 +860,10 @@
     <section class="all-inclusive-section">
         <!-- Container de imagens de fundo -->
         <div class="all-inclusive-bg">
-            <div class="bg-image active" style="background-image: url('assets/images/all-inclusive/gastronomia.jpg');">
-            </div>
-            <div class="bg-image" style="background-image: url('assets/images/all-inclusive/buffet.jpg');"></div>
-            <div class="bg-image" style="background-image: url('assets/images/all-inclusive/bar.jpg');"></div>
-            <div class="bg-image" style="background-image: url('assets/images/all-inclusive/estrutura.jpg');"></div>
+            <div class="bg-image active" data-bg="assets/images/all-inclusive/gastronomia.jpg"></div>
+            <div class="bg-image" data-bg="assets/images/all-inclusive/buffet.jpg"></div>
+            <div class="bg-image" data-bg="assets/images/all-inclusive/bar.jpg"></div>
+            <div class="bg-image" data-bg="assets/images/all-inclusive/estrutura.jpg"></div>
         </div>
 
         <div class="all-inclusive-overlay"></div>
@@ -441,23 +917,23 @@
             <div class="mouton-beach-images" data-aos="fade-left">
                 <div class="mouton-slideshow">
                     <div class="mouton-slide active">
-                        <img src="assets/images/mouton/mouton-main.jpg" alt="Mouton Beach Club - Vista principal"
-                            loading="lazy">
+                        <img src="/assets/images/mouton/mouton-main.jpg" alt="Mouton Beach Club - Vista principal"
+                            loading="eager" fetchpriority="high">
                     </div>
                     <div class="mouton-slide">
-                        <img src="assets/images/mouton/sunset.jpg" alt="Sunset no Mouton" loading="lazy">
+                        <img src="/assets/images/mouton/sunset.jpg" alt="Sunset no Mouton" loading="lazy">
                     </div>
                     <div class="mouton-slide">
-                        <img src="assets/images/mouton/restaurante.jpg" alt="Sunset no Mouton" loading="lazy">
+                        <img src="/assets/images/mouton/restaurante.jpg" alt="Sunset no Mouton" loading="lazy">
                     </div>
                     <div class="mouton-slide">
-                        <img src="assets/images/mouton/lounge.jpg" alt="Lounge do Beach Club" loading="lazy">
+                        <img src="/assets/images/mouton/lounge.jpg" alt="Lounge do Beach Club" loading="lazy">
                     </div>
                     <div class="mouton-slide">
-                        <img src="assets/images/mouton/beach-view.jpg" alt="Vista da praia" loading="lazy">
+                        <img src="/assets/images/mouton/beach-view.jpg" alt="Vista da praia" loading="lazy">
                     </div>
                     <div class="mouton-slide">
-                        <img src="assets/images/mouton/people.jpg" alt="Mulher dançando" loading="lazy">
+                        <img src="/assets/images/mouton/people.jpg" alt="Mulher dançando" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -468,8 +944,15 @@
         <div class="villa-mouton-grid">
             <!-- Lado das imagens - sem slideshow automático -->
             <div class="villa-mouton-images" data-aos="fade-right">
-                <img id="villa-main-image" src="assets/images/villa-mouton/default.jpg"
-                    alt="Villa Mouton - Espaço principal" loading="lazy">
+                <picture>
+                    <source media="(max-width: 768px)" 
+                            srcset="/assets/images/villa-mouton/default-768.webp" type="image/webp">
+                    <source media="(max-width: 768px)" 
+                            srcset="/assets/images/villa-mouton/default-768.jpg">
+                    <source srcset="/assets/images/villa-mouton/default.webp" type="image/webp">
+                    <img id="villa-main-image" src="/assets/images/villa-mouton/default.jpg"
+                         alt="Villa Mouton - Espaço principal">
+                </picture>
             </div>
 
             <!-- Lado do conteúdo - mantém tudo como está -->
@@ -534,15 +1017,27 @@
         </div>
     </section>
 
-
     <!-- Music Section -->
     <section id="musica" class="music-section">
         <div class="container">
             <h2 data-aos="fade-up">Curadoria Musical</h2>
+
+            <!-- Anúncio sutil do Line-up 2026 -->
+            <div class="lineup-teaser" data-aos="fade-up" data-aos-delay="50">
+                <p>Line-up 2026 em breve •
+                    <a href="#newsletter" class="teaser-link">Cadastre-se para ser notificado</a>
+                </p>
+            </div>
+
             <p class="section-intro" data-aos="fade-up" data-aos-delay="100">
-                Uma jornada sonora cuidadosamente selecionada. Artistas internacionais
-                e talentos brasileiros criam a trilha perfeita para sua transformação.
+                Ao longo dos anos, reunimos artistas internacionais e talentos brasileiros
+                que criaram momentos inesquecíveis em nossos palcos.
             </p>
+        </div>
+
+        <!-- Badge separado do carrossel -->
+        <div class="past-editions-label" data-aos="fade-up" data-aos-delay="150">
+            <span>Artistas de Edições Anteriores</span>
         </div>
 
         <!-- Artists Swiper Carousel -->
@@ -552,8 +1047,16 @@
                     <!-- Black Coffee -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/blackcoffee.jpg" alt="Black Coffee - DJ sul-africano"
-                                loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/blackcoffee-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/blackcoffee-768.jpg">
+                                <source srcset="/assets/images/artists/blackcoffee.webp" type="image/webp">
+                                <img src="/assets/images/artists/blackcoffee.jpg" alt="Black Coffee - DJ sul-africano"
+                                     width="410" height="530" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Black Coffee</p>
                                 <div class="artist-info">
@@ -561,7 +1064,6 @@
                                         <img src="https://flagcdn.com/w20/za.png" alt="África do Sul">
                                         <span>África do Sul</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -570,7 +1072,16 @@
                     <!-- Carl Cox -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/carlcox.jpg" alt="Carl Cox - DJ britânico" loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/carlcox-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/carlcox-768.jpg">
+                                <source srcset="/assets/images/artists/carlcox.webp" type="image/webp">
+                                <img src="/assets/images/artists/carlcox.jpg" alt="Carl Cox - DJ britânico"
+                                     width="410" height="530" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Carl Cox</p>
                                 <div class="artist-info">
@@ -578,7 +1089,6 @@
                                         <img src="https://flagcdn.com/w20/gb.png" alt="Reino Unido">
                                         <span>Reino Unido</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -587,8 +1097,16 @@
                     <!-- Vintage Culture -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/vintage.jpg" alt="Vintage Culture - DJ brasileiro"
-                                loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/vintage-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/vintage-768.jpg">
+                                <source srcset="/assets/images/artists/vintage.webp" type="image/webp">
+                                <img src="/assets/images/artists/vintage.jpg" alt="Vintage Culture - DJ brasileiro"
+                                     width="410" height="530" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Vintage Culture</p>
                                 <div class="artist-info">
@@ -596,7 +1114,6 @@
                                         <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
                                         <span>Brasil</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -605,8 +1122,16 @@
                     <!-- WhoMadeWho -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/whomadewho.jpg" alt="WhoMadeWho - Banda dinamarquesa"
-                                loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/whomadewho-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/whomadewho-768.jpg">
+                                <source srcset="/assets/images/artists/whomadewho.webp" type="image/webp">
+                                <img src="/assets/images/artists/whomadewho.jpg" alt="WhoMadeWho - Banda dinamarquesa"
+                                     width="410" height="530" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">WhoMadeWho</p>
                                 <div class="artist-info">
@@ -614,7 +1139,6 @@
                                         <img src="https://flagcdn.com/w20/dk.png" alt="Dinamarca">
                                         <span>Dinamarca</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -623,8 +1147,16 @@
                     <!-- Keinemusik -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/keine.jpg" alt="Keinemusik - Coletivo alemão"
-                                loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/keine-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/keine-768.jpg">
+                                <source srcset="/assets/images/artists/keine.webp" type="image/webp">
+                                <img src="/assets/images/artists/keine.jpg" alt="Keinemusik - Coletivo alemão"
+                                     width="410" height="530" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Keinemusik</p>
                                 <div class="artist-info">
@@ -632,7 +1164,6 @@
                                         <img src="https://flagcdn.com/w20/de.png" alt="Alemanha">
                                         <span>Alemanha</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -641,7 +1172,16 @@
                     <!-- Carlita -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/carlita.jpg" alt="Carlita - DJ turca" loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/carlita-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/carlita-768.jpg">
+                                <source srcset="/assets/images/artists/carlita.webp" type="image/webp">
+                                <img src="/assets/images/artists/carlita.jpg" alt="Carlita - DJ turca"
+                                     width="410" height="530" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Carlita</p>
                                 <div class="artist-info">
@@ -649,7 +1189,6 @@
                                         <img src="https://flagcdn.com/w20/tr.png" alt="Turquia">
                                         <span>Turquia</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -658,8 +1197,16 @@
                     <!-- Jorge Ben Jor -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/jorgeben.jpg" alt="Jorge Ben Jor - Cantor brasileiro"
-                                loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/jorgeben-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/jorgeben-768.jpg">
+                                <source srcset="/assets/images/artists/jorgeben.webp" type="image/webp">
+                                <img src="/assets/images/artists/jorgeben.jpg" alt="Jorge Ben Jor - Cantor brasileiro"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Jorge Ben Jor</p>
                                 <div class="artist-info">
@@ -667,7 +1214,6 @@
                                         <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
                                         <span>Brasil</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -676,8 +1222,16 @@
                     <!-- Seu Jorge -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/seujorge.jpg" alt="Seu Jorge - Cantor brasileiro"
-                                loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/seujorge-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/seujorge-768.jpg">
+                                <source srcset="/assets/images/artists/seujorge.webp" type="image/webp">
+                                <img src="/assets/images/artists/seujorge.jpg" alt="Seu Jorge - Cantor brasileiro"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Seu Jorge</p>
                                 <div class="artist-info">
@@ -685,7 +1239,6 @@
                                         <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
                                         <span>Brasil</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -694,8 +1247,16 @@
                     <!-- Natiruts -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/natiruts.jpg" alt="Natiruts - Banda brasileira"
-                                loading="lazy">
+                            <span class="artist-year-badge">2022</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/natiruts-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/natiruts-768.jpg">
+                                <source srcset="/assets/images/artists/natiruts.webp" type="image/webp">
+                                <img src="/assets/images/artists/natiruts.jpg" alt="Natiruts - Banda brasileira"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Natiruts</p>
                                 <div class="artist-info">
@@ -703,7 +1264,6 @@
                                         <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
                                         <span>Brasil</span>
                                     </div>
-                                    <span class="artist-year">2022</span>
                                 </div>
                             </div>
                         </article>
@@ -712,7 +1272,16 @@
                     <!-- ANOTR -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/anotr.jpg" alt="ANOTR - DJ holandês" loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/anotr-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/anotr-768.jpg">
+                                <source srcset="/assets/images/artists/anotr.webp" type="image/webp">
+                                <img src="/assets/images/artists/anotr.jpg" alt="ANOTR - DJ holandês"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">ANOTR</p>
                                 <div class="artist-info">
@@ -720,7 +1289,6 @@
                                         <img src="https://flagcdn.com/w20/nl.png" alt="Holanda">
                                         <span>Holanda</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -729,7 +1297,16 @@
                     <!-- Mochakk -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/mochakk.jpg" alt="Mochakk - DJ brasileiro" loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/mochakk-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/mochakk-768.jpg">
+                                <source srcset="/assets/images/artists/mochakk.webp" type="image/webp">
+                                <img src="/assets/images/artists/mochakk.jpg" alt="Mochakk - DJ brasileiro"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Mochakk</p>
                                 <div class="artist-info">
@@ -737,7 +1314,6 @@
                                         <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
                                         <span>Brasil</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -746,8 +1322,16 @@
                     <!-- Damian Lazarus -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/damianlazarus.jpg" alt="Damian Lazarus - DJ britânico"
-                                loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/damianlazarus-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/damianlazarus-768.jpg">
+                                <source srcset="/assets/images/artists/damianlazarus.webp" type="image/webp">
+                                <img src="/assets/images/artists/damianlazarus.jpg" alt="Damian Lazarus - DJ britânico"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Damian Lazarus</p>
                                 <div class="artist-info">
@@ -755,7 +1339,6 @@
                                         <img src="https://flagcdn.com/w20/gb.png" alt="Reino Unido">
                                         <span>Reino Unido</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -764,7 +1347,16 @@
                     <!-- PAWSA -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/pawsa.jpg" alt="PAWSA - DJ britânico" loading="lazy">
+                            <span class="artist-year-badge">2024</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/pawsa-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/pawsa-768.jpg">
+                                <source srcset="/assets/images/artists/pawsa.webp" type="image/webp">
+                                <img src="/assets/images/artists/pawsa.jpg" alt="PAWSA - DJ britânico"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">PAWSA</p>
                                 <div class="artist-info">
@@ -772,7 +1364,6 @@
                                         <img src="https://flagcdn.com/w20/gb.png" alt="Reino Unido">
                                         <span>Reino Unido</span>
                                     </div>
-                                    <span class="artist-year">2024</span>
                                 </div>
                             </div>
                         </article>
@@ -781,7 +1372,16 @@
                     <!-- Folamour -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/folamour.jpg" alt="Folamour - DJ francês" loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/folamour-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/folamour-768.jpg">
+                                <source srcset="/assets/images/artists/folamour.webp" type="image/webp">
+                                <img src="/assets/images/artists/folamour.jpg" alt="Folamour - DJ francês"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Folamour</p>
                                 <div class="artist-info">
@@ -789,7 +1389,6 @@
                                         <img src="https://flagcdn.com/w20/fr.png" alt="França">
                                         <span>França</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -798,8 +1397,16 @@
                     <!-- Lee Burridge -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/leeburridge.jpg" alt="Lee Burridge - DJ britânico"
-                                loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/leeburridge-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/leeburridge-768.jpg">
+                                <source srcset="/assets/images/artists/leeburridge.webp" type="image/webp">
+                                <img src="/assets/images/artists/leeburridge.jpg" alt="Lee Burridge - DJ britânico"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Lee Burridge</p>
                                 <div class="artist-info">
@@ -807,7 +1414,6 @@
                                         <img src="https://flagcdn.com/w20/gb.png" alt="Reino Unido">
                                         <span>Reino Unido</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -816,16 +1422,23 @@
                     <!-- Pablo Fierro -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/pablofierro.jpg" alt="Pablo Fierro - DJ argentino"
-                                loading="lazy">
+                            <span class="artist-year-badge">2022</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/pablofierro-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/pablofierro-768.jpg">
+                                <source srcset="/assets/images/artists/pablofierro.webp" type="image/webp">
+                                <img src="/assets/images/artists/pablofierro.jpg" alt="Pablo Fierro - DJ espanhol"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Pablo Fierro</p>
                                 <div class="artist-info">
                                     <div class="artist-origin">
-                                        <img src="https://flagcdn.com/w20/ar.png" alt="Argentina">
-                                        <span>Argentina</span>
+                                        <img src="https://flagcdn.com/w20/es.png" alt="Espanha">
+                                        <span>Espanha</span>
                                     </div>
-                                    <span class="artist-year">2022</span>
                                 </div>
                             </div>
                         </article>
@@ -834,8 +1447,16 @@
                     <!-- Bob Moses -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/bobmoses.jpg" alt="Bob Moses - Duo canadense"
-                                loading="lazy">
+                            <span class="artist-year-badge">2023</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/bobmoses-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/bobmoses-768.jpg">
+                                <source srcset="/assets/images/artists/bobmoses.webp" type="image/webp">
+                                <img src="/assets/images/artists/bobmoses.jpg" alt="Bob Moses - Duo canadense"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Bob Moses</p>
                                 <div class="artist-info">
@@ -843,7 +1464,6 @@
                                         <img src="https://flagcdn.com/w20/ca.png" alt="Canadá">
                                         <span>Canadá</span>
                                     </div>
-                                    <span class="artist-year">2023</span>
                                 </div>
                             </div>
                         </article>
@@ -852,7 +1472,16 @@
                     <!-- Monolink -->
                     <div class="swiper-slide">
                         <article class="artist-slide">
-                            <img src="assets/images/artists/monolink.jpg" alt="Monolink - DJ alemão" loading="lazy">
+                            <span class="artist-year-badge">2022</span>
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/monolink-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/artists/monolink-768.jpg">
+                                <source srcset="/assets/images/artists/monolink.webp" type="image/webp">
+                                <img src="/assets/images/artists/monolink.jpg" alt="Monolink - DJ alemão"
+                                     width="410" height="530" loading="lazy" decoding="async">
+                            </picture>
                             <div class="artist-overlay">
                                 <p class="artist-name">Monolink</p>
                                 <div class="artist-info">
@@ -860,7 +1489,6 @@
                                         <img src="https://flagcdn.com/w20/de.png" alt="Alemanha">
                                         <span>Alemanha</span>
                                     </div>
-                                    <span class="artist-year">2022</span>
                                 </div>
                             </div>
                         </article>
@@ -885,50 +1513,126 @@
                     <div class="wellness-carousel" id="wellness-carousel">
                         <!-- Original set -->
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/manguegym.jpg" alt="Mangue Gym - Academia ao ar livre"
-                                loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/manguegym-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/manguegym-768.jpg">
+                                <source srcset="/assets/images/wellness/manguegym.webp" type="image/webp">
+                                <img src="/assets/images/wellness/manguegym.jpg" alt="Mangue Gym - Academia ao ar livre">
+                            </picture>
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/run.jpg" alt="Carneiros Run - Corrida na praia"
-                                loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/run-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/run-768.jpg">
+                                <source srcset="/assets/images/wellness/run.webp" type="image/webp">
+                                <img src="/assets/images/wellness/run.jpg" alt="Carneiros Run - Corrida na praia">
+                            </picture>
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/rituaus.jpg" alt="Rituaus - Práticas de bem-estar"
-                                loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/rituaus-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/rituaus-768.jpg">
+                                <source srcset="/assets/images/wellness/rituaus.webp" type="image/webp">
+                                <img src="/assets/images/wellness/rituaus.jpg" alt="Rituaus - Práticas de bem-estar">
+                            </picture>
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/yoga.jpg" alt="Yoga - Prática ao nascer do sol"
-                                loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/yoga-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/yoga-768.jpg">
+                                <source srcset="/assets/images/wellness/yoga.webp" type="image/webp">
+                                <img src="/assets/images/wellness/yoga.jpg" alt="Yoga - Prática ao nascer do sol">
+                            </picture>
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/icebath.jpg" alt="Ice Bath - Banho de gelo" loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/icebath-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/icebath-768.jpg">
+                                <source srcset="/assets/images/wellness/icebath.webp" type="image/webp">
+                                <img src="/assets/images/wellness/icebath.jpg" alt="Ice Bath - Banho de gelo">
+                            </picture>
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/spa.jpg" alt="Spa e massagens relaxantes" loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/spa-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/spa-768.jpg">
+                                <source srcset="/assets/images/wellness/spa.webp" type="image/webp">
+                                <img src="/assets/images/wellness/spa.jpg" alt="Spa e massagens relaxantes">
+                            </picture>
                         </div>
 
                         <!-- Duplicate for infinite loop -->
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/manguegym.jpg" alt="Mangue Gym - Academia ao ar livre"
-                                loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/manguegym-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/manguegym-768.jpg">
+                                <source srcset="/assets/images/wellness/manguegym.webp" type="image/webp">
+                                <img src="/assets/images/wellness/manguegym.jpg" alt="Mangue Gym - Academia ao ar livre">
+                            </picture>
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/run.jpg" alt="Carneiros Run - Corrida na praia"
-                                loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/run-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/run-768.jpg">
+                                <source srcset="/assets/images/wellness/run.webp" type="image/webp">
+                                <img src="/assets/images/wellness/run.jpg" alt="Carneiros Run - Corrida na praia">
+                            </picture>
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/rituaus.jpg" alt="Rituaus - Práticas de bem-estar"
-                                loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/rituaus-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/rituaus-768.jpg">
+                                <source srcset="/assets/images/wellness/rituaus.webp" type="image/webp">
+                                <img src="/assets/images/wellness/rituaus.jpg" alt="Rituaus - Práticas de bem-estar">
+                            </picture>
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/yoga.jpg" alt="Yoga - Prática ao nascer do sol"
-                                loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/yoga-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/yoga-768.jpg">
+                                <source srcset="/assets/images/wellness/yoga.webp" type="image/webp">
+                                <img src="/assets/images/wellness/yoga.jpg" alt="Yoga - Prática ao nascer do sol">
+                            </picture>
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/icebath.jpg" alt="Ice Bath - Banho de gelo" loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/icebath-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/icebath-768.jpg">
+                                <source srcset="/assets/images/wellness/icebath.webp" type="image/webp">
+                                <img src="/assets/images/wellness/icebath.jpg" alt="Ice Bath - Banho de gelo">
+                            </picture>
                         </div>
                         <div class="wellness-slide">
-                            <img src="assets/images/wellness/spa.jpg" alt="Spa e massagens relaxantes" loading="lazy">
+                            <picture>
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/spa-768.webp" type="image/webp">
+                                <source media="(max-width: 768px)" 
+                                        srcset="/assets/images/wellness/spa-768.jpg">
+                                <source srcset="/assets/images/wellness/spa.webp" type="image/webp">
+                                <img src="/assets/images/wellness/spa.jpg" alt="Spa e massagens relaxantes">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -937,7 +1641,7 @@
             <!-- Wellness Activities -->
             <div class="wellness-activities" data-aos="fade-up" data-aos-delay="300">
                 <div class="wellness-category">
-                    <h3>Recuperação</h3>
+                    <h3>Mind</h3>
                     <div class="activity-item">
                         <button class="activity-toggle" aria-expanded="false"
                             aria-controls="activity-yoga">Yoga</button>
@@ -975,7 +1679,7 @@
                 </div>
 
                 <div class="wellness-category">
-                    <h3>Intensidade</h3>
+                    <h3>Body</h3>
                     <div class="activity-item">
                         <button class="activity-toggle" aria-expanded="false" aria-controls="activity-run">Carneiros
                             Run</button>
@@ -1026,11 +1730,11 @@
             <div class="destination-grid">
                 <div class="destination-images" data-aos="fade-right">
                     <div class="destination-main-slideshow">
-                        <img src="assets/images/destino/main-carneiros.jpg" alt="Praia dos Carneiros - Vista aérea"
+                        <img src="/assets/images/destino/main-carneiros.jpg" alt="Praia dos Carneiros - Vista aérea"
                             class="destination-slide active" loading="lazy">
-                        <img src="assets/images/destino/people.jpg" alt="Capela São Benedito - Cartão postal da praia"
+                        <img src="/assets/images/destino/people.jpg" alt="Capela São Benedito - Cartão postal da praia"
                             class="destination-slide" loading="lazy">
-                        <img src="assets/images/destino/view.jpg" alt="Piscinas Naturais de Carneiros"
+                        <img src="/assets/images/destino/view.jpg" alt="Piscinas Naturais de Carneiros"
                             class="destination-slide" loading="lazy">
                     </div>
                 </div>
@@ -1045,7 +1749,7 @@
                         </div>
                         <div class="travel-item">
                             <h4>Trajeto até Carneiros</h4>
-                            <p>90km do aeroporto (aproximadamente 1h30)<br>
+                            <p>90km do aeroporto (aproximadamente 1h30min)<br>
                                 Transfer, táxi ou carro alugado disponíveis</p>
                         </div>
                         <div class="travel-item">
@@ -1064,8 +1768,7 @@
             <div class="map-container" data-aos="fade-up" data-aos-delay="300">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31541.18732490766!2d-35.10489592089844!3d-8.715674150000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aa82437ea03031%3A0x336f75ffd9e3f152!2sPraia%20dos%20Carneiros!5e0!3m2!1spt-BR!2sbr!4v1695849025374!5m2!1spt-BR!2sbr"
-                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" title="Mapa da localização da Praia dos Carneiros">
+                    width="100%" height="400" style="border:0;" allowfullscreen=""                     referrerpolicy="no-referrer-when-downgrade" title="Mapa da localização da Praia dos Carneiros">
                 </iframe>
             </div>
         </div>
@@ -1326,22 +2029,152 @@
         </div>
     </footer>
 
-    <!-- External Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Scripts com defer para não bloquear renderização -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Modern ES6 Modules (Progressive Enhancement) -->
+    <script defer src="js/main.js"></script>
+
     <script>
-        // Inicializa AOS imediatamente para evitar conteúdo invisível
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100
-            });
+        // Lazy Loading crítico inline
+        document.addEventListener('DOMContentLoaded', function () {
+            // Lazy load de imagens com placeholders
+            const lazyImages = document.querySelectorAll('img.lazyload');
+
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazyload');
+                            img.classList.add('lazyloaded');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                }, {
+                    rootMargin: '50px 0px',
+                    threshold: 0.01
+                });
+
+                lazyImages.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback para browsers antigos
+                lazyImages.forEach(img => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazyload');
+                    img.classList.add('lazyloaded');
+                });
+            }
+
+            // Preloader Inteligente - Remove apenas quando recursos críticos estão prontos
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                const criticalResources = {
+                    fonts: false,
+                    heroImage: false,
+                    css: document.readyState === 'complete'
+                };
+                
+                let minDisplayTime = 800; // Tempo mínimo de exibição
+                const maxWaitTime = 3000; // Timeout de segurança
+                const startTime = performance.now();
+                
+                // Detecta carregamento de fontes críticas
+                if ('fonts' in document) {
+                    Promise.all([
+                        document.fonts.load('1em Amagro'),
+                        document.fonts.load('1em SFProDisplay')
+                    ]).then(() => {
+                        criticalResources.fonts = true;
+                        checkReadyToHide();
+                    }).catch(() => {
+                        criticalResources.fonts = true; // Fallback
+                        checkReadyToHide();
+                    });
+                } else {
+                    // Fallback para browsers sem font loading API
+                    setTimeout(() => {
+                        criticalResources.fonts = true;
+                        checkReadyToHide();
+                    }, 1000);
+                }
+                
+                // Detecta carregamento da imagem hero
+                const heroImage = document.querySelector('.hero-section img[loading="eager"]');
+                if (heroImage) {
+                    if (heroImage.complete) {
+                        criticalResources.heroImage = true;
+                    } else {
+                        heroImage.addEventListener('load', () => {
+                            criticalResources.heroImage = true;
+                            checkReadyToHide();
+                        });
+                        heroImage.addEventListener('error', () => {
+                            criticalResources.heroImage = true; // Continua mesmo com erro
+                            checkReadyToHide();
+                        });
+                    }
+                } else {
+                    criticalResources.heroImage = true;
+                }
+                
+                // Detecta quando documento está completamente carregado
+                if (document.readyState === 'complete') {
+                    criticalResources.css = true;
+                } else {
+                    window.addEventListener('load', () => {
+                        criticalResources.css = true;
+                        checkReadyToHide();
+                    });
+                }
+                
+                // Função para verificar se pode esconder o preloader
+                function checkReadyToHide() {
+                    const allResourcesReady = Object.values(criticalResources).every(ready => ready);
+                    const timeElapsed = performance.now() - startTime;
+                    
+                    if (allResourcesReady && timeElapsed >= minDisplayTime) {
+                        hidePreloader();
+                    }
+                }
+                
+                // Timeout de segurança
+                setTimeout(() => {
+                    hidePreloader();
+                }, maxWaitTime);
+                
+                // Função para esconder o preloader
+                function hidePreloader() {
+                    if (!preloader.classList.contains('fade-out')) {
+                        preloader.classList.add('fade-out');
+                        setTimeout(() => {
+                            if (preloader.parentNode) {
+                                preloader.remove();
+                            }
+                        }, 1000);
+                    }
+                }
+                
+                // Primeira verificação
+                checkReadyToHide();
+            }
+        });
+
+        // Inicializa AOS após carregamento
+        window.addEventListener('load', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 700,
+                    once: true,
+                    offset: 50,
+                    disable: 'mobile'
+                });
+            }
         });
     </script>
 
-    <!-- JavaScript File -->
-    <script src="js/main.js" defer></script>
-
+    <!-- Language Detection Script -->
+    <script src="/js/language-detector.js" defer></script>
 </body>
 
 </html>

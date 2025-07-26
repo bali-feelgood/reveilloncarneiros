@@ -333,90 +333,106 @@ const NavigationController = {
 // ExperiencesController removido - substituído por ExperiencesCarouselV2
 
 /* ==========================================================================
-   8. UNIVERSAL SLIDESHOW - UNIFICADO E OTIMIZADO
+   8. ALL INCLUSIVE SECTION - SLIDESHOW OTIMIZADO
    ========================================================================== */
-const UniversalSlideshow = {
-    init(config) {
-        const slides = document.querySelectorAll(config.selector);
-        if (!slides.length) return;
+const AllInclusiveController = {
+    init() {
+        const bgImages = document.querySelectorAll('.all-inclusive-bg .bg-image');
+        if (!bgImages.length) return;
 
-        const slideshow = {
-            slides: slides,
-            currentIndex: 0,
+        this.images = bgImages;
+        this.currentIndex = 0;
+        
+        // Carrega primeira imagem imediatamente
+        this.loadBackgroundImage(0);
+        
+        // Pré-carrega próxima imagem
+        setTimeout(() => this.preloadNextImage(), 1000);
+
+        setInterval(() => this.nextImage(), CONFIG.slideshows.allInclusive);
+    },
+
+    loadBackgroundImage(index) {
+        const image = this.images[index];
+        const bgUrl = image.dataset.bg;
+        
+        if (bgUrl) {
+            // Responsive background: mobile-optimized on small screens
+            const isMobile = window.innerWidth <= 768;
+            const fileName = bgUrl.split('/').pop().replace('.jpg', '');
+            const basePath = bgUrl.replace(/\/[^/]+$/, '/');
             
-            start() {
-                // Para background images (All-Inclusive)
-                if (config.type === 'background') {
-                    this.loadBackgroundImage(0);
-                    setTimeout(() => this.preloadNextImage(), 1000);
-                }
+            if (isMobile) {
+                // Prioriza WebP mobile, fallback JPG mobile
+                const webpUrl = `${basePath}${fileName}-768.webp`;
+                const jpgUrl = `${basePath}${fileName}-768.jpg`;
                 
-                setInterval(() => this.nextSlide(), config.interval);
-            },
-
-            nextSlide() {
-                this.slides.forEach(slide => slide.classList.remove('active'));
-                this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-                this.slides[this.currentIndex].classList.add('active');
-                
-                // Pré-carrega próxima (apenas para background)
-                if (config.type === 'background') {
-                    setTimeout(() => this.preloadNextImage(), 1000);
-                }
-            },
-
-            loadBackgroundImage(index) {
-                const image = this.slides[index];
-                const bgUrl = image.dataset.bg;
-                
-                if (bgUrl) {
-                    const isMobile = window.innerWidth <= 768;
-                    const fileName = bgUrl.split('/').pop().replace('.jpg', '');
-                    const basePath = bgUrl.replace(/\/[^/]+$/, '/');
-                    
-                    if (isMobile) {
-                        const webpUrl = `${basePath}${fileName}-768.webp`;
-                        const jpgUrl = `${basePath}${fileName}-768.jpg`;
-                        
-                        this.supportsWebP().then(supportsWebP => {
-                            const optimizedUrl = supportsWebP ? webpUrl : jpgUrl;
-                            image.style.backgroundImage = `url(${optimizedUrl})`;
-                        });
-                    } else {
-                        const webpUrl = bgUrl.replace('.jpg', '.webp');
-                        
-                        this.supportsWebP().then(supportsWebP => {
-                            const optimizedUrl = supportsWebP ? webpUrl : bgUrl;
-                            image.style.backgroundImage = `url(${optimizedUrl})`;
-                        });
-                    }
-                    
-                    image.removeAttribute('data-bg');
-                }
-            },
-
-            supportsWebP() {
-                return new Promise((resolve) => {
-                    const webP = new Image();
-                    webP.onload = webP.onerror = () => resolve(webP.height === 2);
-                    webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+                // Testa suporte WebP
+                this.supportsWebP().then(supportsWebP => {
+                    const optimizedUrl = supportsWebP ? webpUrl : jpgUrl;
+                    image.style.backgroundImage = `url(${optimizedUrl})`;
                 });
-            },
-
-            preloadNextImage() {
-                const nextIndex = (this.currentIndex + 1) % this.slides.length;
-                this.loadBackgroundImage(nextIndex);
+            } else {
+                // Desktop: prioriza WebP, fallback JPG original
+                const webpUrl = bgUrl.replace('.jpg', '.webp');
+                
+                this.supportsWebP().then(supportsWebP => {
+                    const optimizedUrl = supportsWebP ? webpUrl : bgUrl;
+                    image.style.backgroundImage = `url(${optimizedUrl})`;
+                });
             }
-        };
+            
+            image.removeAttribute('data-bg');
+        }
+    },
 
-        slideshow.start();
+    // Detecta suporte WebP
+    supportsWebP() {
+        return new Promise((resolve) => {
+            const webP = new Image();
+            webP.onload = webP.onerror = () => resolve(webP.height === 2);
+            webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+        });
+    },
+
+    preloadNextImage() {
+        const nextIndex = (this.currentIndex + 1) % this.images.length;
+        this.loadBackgroundImage(nextIndex);
+    },
+
+    nextImage() {
+        this.images.forEach(img => img.classList.remove('active'));
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.images[this.currentIndex].classList.add('active');
+        
+        // Pré-carrega a próxima
+        setTimeout(() => this.preloadNextImage(), 1000);
     }
 };
 
 /* ==========================================================================
-   9. MOUTON BEACH SECTION - REMOVIDO (USA UNIVERSAL SLIDESHOW)
+   9. MOUTON BEACH SECTION - SLIDESHOW OTIMIZADO
    ========================================================================== */
-// MoutonBeachController removido - substituído por UniversalSlideshow
+const MoutonBeachController = {
+    init() {
+        const slides = document.querySelectorAll('.mouton-slide');
+        if (!slides.length) return;
+
+        this.slides = slides;
+        this.currentSlide = 0;
+
+        // O lazy loading é gerenciado pelo sistema global Utils.lazyLoadImages()
+
+        setInterval(() => this.changeSlide(), CONFIG.slideshows.moutonBeach);
+    },
+
+
+    changeSlide() {
+        this.slides[this.currentSlide].classList.remove('active');
+        this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+        this.slides[this.currentSlide].classList.add('active');
+    }
+};
 
 /* ==========================================================================
    10. VILLA MOUTON SECTION - OTIMIZADO
@@ -483,32 +499,7 @@ const VillaMoutonController = {
     async changeImage(newSrc) {
         this.imageContainer.classList.add('transitioning');
         await Utils.delay(300);
-        
-        // Atualiza img src (funciona para inglês com img simples)
         this.mainImage.src = newSrc;
-        
-        // Atualiza picture sources (necessário para português com picture element)
-        const picture = this.imageContainer.querySelector('picture');
-        if (picture) {
-            const sources = picture.querySelectorAll('source');
-            sources.forEach(source => {
-                const currentSrcset = source.getAttribute('srcset');
-                if (currentSrcset) {
-                    // Substitui o nome da imagem mantendo o padrão -768.webp, -768.jpg, .webp, .jpg
-                    const fileName = newSrc.split('/').pop().replace('.jpg', '');
-                    const basePath = newSrc.replace(/\/[^/]+$/, '/');
-                    
-                    if (currentSrcset.includes('-768.webp')) {
-                        source.setAttribute('srcset', `${basePath}${fileName}-768.webp`);
-                    } else if (currentSrcset.includes('-768.jpg')) {
-                        source.setAttribute('srcset', `${basePath}${fileName}-768.jpg`);
-                    } else if (currentSrcset.includes('.webp')) {
-                        source.setAttribute('srcset', `${basePath}${fileName}.webp`);
-                    }
-                }
-            });
-        }
-        
         await Utils.delay(50);
         this.imageContainer.classList.remove('transitioning');
     }
@@ -713,9 +704,25 @@ const FAQController = {
 };
 
 /* ==========================================================================
-   14. DESTINATION SECTION - REMOVIDO (USA UNIVERSAL SLIDESHOW)
+   14. DESTINATION SECTION
    ========================================================================== */
-// DestinationController removido - substituído por UniversalSlideshow
+const DestinationController = {
+    init() {
+        const slides = document.querySelectorAll('.destination-slide');
+        if (!slides.length) return;
+
+        this.slides = slides;
+        this.currentIndex = 0;
+
+        setInterval(() => this.changeSlide(), CONFIG.slideshows.destination);
+    },
+
+    changeSlide() {
+        this.slides.forEach(slide => slide.classList.remove('active'));
+        this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+        this.slides[this.currentIndex].classList.add('active');
+    }
+};
 
 /* ==========================================================================
    15. NEWSLETTER SECTION
@@ -799,47 +806,22 @@ const App = {
         // Lazy load de imagens globalmente
         Utils.lazyLoadImages();
 
-        // Inicializa todos os controladores com tratamento de erro
-        try {
-            HeaderController.init();
-            NavigationController.init();
-        } catch (error) {
-            console.error('❌ Erro na inicialização básica:', error);
-        }
+        // Inicializa todos os controladores
+        HeaderController.init();
+        NavigationController.init();
         
         // Novo carousel V2 para mobile
         if (window.innerWidth <= 768) {
             import('./components/ExperiencesCarouselV2.js').then(module => {
                 new module.default('.experiences-wrapper');
-            }).catch(error => {
-                console.warn('⚠️ ExperiencesCarouselV2 failed to load:', error);
             });
         }
         
-        try {
-            VillaMoutonController.init();
-            
-            // Universal Slideshows - unificados
-            UniversalSlideshow.init({
-                selector: '.all-inclusive-bg .bg-image',
-                type: 'background',
-                interval: CONFIG.slideshows.allInclusive
-            });
-            
-            UniversalSlideshow.init({
-                selector: '.mouton-slide', 
-                type: 'simple',
-                interval: CONFIG.slideshows.moutonBeach
-            });
-            
-            UniversalSlideshow.init({
-                selector: '.destination-slide',
-                type: 'simple', 
-                interval: CONFIG.slideshows.destination
-            });
-        } catch (error) {
-            console.error('❌ Erro nos slideshows:', error);
-        }
+        AllInclusiveController.init();
+        MoutonBeachController.init();
+        VillaMoutonController.init();
+        
+        // Comentar: MusicController.init();
         
         // Novo Music Carousel V2
         import('./components/MusicCarouselV2.js').then(module => {
@@ -847,17 +829,12 @@ const App = {
             
             // Início suave após 1s
             setTimeout(() => carousel.startAnimation(), 1000);
-        }).catch(error => {
-            console.warn('⚠️ MusicCarouselV2 failed to load:', error);
         });
         
-        try {
-            WellnessController.init();
-            FAQController.init();
-            NewsletterController.init();
-        } catch (error) {
-            console.error('❌ Erro nos controllers finais:', error);
-        }
+        WellnessController.init();
+        FAQController.init();
+        DestinationController.init();
+        NewsletterController.init();
 
         console.log('✅ Todos os módulos iniciados com sucesso!');
 
@@ -937,75 +914,6 @@ const App = {
    INICIALIZAÇÃO
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
-    // Preloader Inteligente - Remove apenas quando recursos críticos estão prontos
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        const criticalResources = {
-            fonts: false,
-            css: document.readyState === 'complete'
-        };
-        
-        let minDisplayTime = 800; // Tempo mínimo de exibição
-        const maxWaitTime = 3000; // Timeout de segurança
-        const startTime = performance.now();
-        
-        // Verificar carregamento das fontes
-        if ('fonts' in document) {
-            document.fonts.ready.then(() => {
-                criticalResources.fonts = true;
-                checkReadyToHide();
-            });
-        } else {
-            // Fallback para browsers sem font loading API
-            setTimeout(() => {
-                criticalResources.fonts = true;
-                checkReadyToHide();
-            }, 500);
-        }
-        
-        // Heroimage check removido - não existe no HTML
-        
-        // Verificar se CSS já está carregado
-        if (document.readyState === 'complete') {
-            criticalResources.css = true;
-        } else {
-            window.addEventListener('load', () => {
-                criticalResources.css = true;
-                checkReadyToHide();
-            });
-        }
-        
-        // Função para verificar se pode esconder o preloader
-        function checkReadyToHide() {
-            const allResourcesReady = Object.values(criticalResources).every(ready => ready);
-            const timeElapsed = performance.now() - startTime;
-            
-            if (allResourcesReady && timeElapsed >= minDisplayTime) {
-                hidePreloader();
-            }
-        }
-        
-        // Timeout de segurança
-        setTimeout(() => {
-            hidePreloader();
-        }, maxWaitTime);
-        
-        // Função para esconder o preloader
-        function hidePreloader() {
-            if (!preloader.classList.contains('fade-out')) {
-                preloader.classList.add('fade-out');
-                setTimeout(() => {
-                    if (preloader.parentNode) {
-                        preloader.remove();
-                    }
-                }, 1000);
-            }
-        }
-        
-        // Primeira verificação
-        checkReadyToHide();
-    }
-
     App.init();
 });
 
@@ -1072,7 +980,12 @@ const LanguageSelectorController = {
     }
 };
 
-// Initialize language selector when DOM loads
+// Import language detector
 document.addEventListener('DOMContentLoaded', () => {
+    if (typeof LanguageDetector !== 'undefined') {
+        LanguageDetector.init();
+    }
+    
+    // Initialize language selector
     LanguageSelectorController.init();
 });
