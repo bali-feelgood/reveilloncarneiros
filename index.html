@@ -1328,6 +1328,16 @@
 
     <!-- External Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Inicializa AOS imediatamente para evitar conteúdo invisível
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
 
     <!-- JavaScript File -->
     <script src="js/main.js" defer></script>
