@@ -610,6 +610,10 @@
 @keyframes logoFloat{0%,100%{transform:translateY(0);opacity:0.9}50%{transform:translateY(-3px);opacity:1}}
 @keyframes progressMove{0%{left:-100%}100%{left:100%}}
     </style>
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/assets/fonts/Amagro-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/images/hero/hero-background.webp" as="image">
 </head>
 
 
@@ -679,7 +683,8 @@
                             <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Comprar</button>
                             <div class="dropdown-menu" role="menu">
                                 <a href="https://www.ingresse.com/reveillon-carneiros-2026/" target="_blank"
-                                    rel="noopener" role="menuitem">Ingressos</a>
+                                    rel="noopener" role="menuitem"
+                                    onclick="fbq('track', 'InitiateCheckout', {content_name: 'Réveillon Carneiros 2026', content_category: 'Ingresso', currency: 'BRL', custom_data: {button_location: 'header'}}); gtag('event', 'begin_checkout', {currency: 'BRL', custom_parameter: 'header_button', items: [{item_name: 'Réveillon Carneiros 2026', item_category: 'Ingresso'}]});">Ingressos</a>
                                 <a href="https://injoytravel.com.br/carneiros/" target="_blank" rel="noopener"
                                     role="menuitem">Hotéis e Voos</a>
                             </div>
@@ -722,7 +727,8 @@
                 Oito dias de imersão em música, natureza e conexão autêntica.
             </p>
             <a href="https://www.ingresse.com/reveillon-carneiros-2026/" target="_blank" rel="noopener"
-                class="btn-habitas" style="animation: fadeInUp 1.5s ease-out 0.6s both;">Comprar</a>
+                class="btn-habitas" style="animation: fadeInUp 1.5s ease-out 0.6s both;"
+                onclick="fbq('track', 'InitiateCheckout', {content_name: 'Réveillon Carneiros 2026', content_category: 'Ingresso', currency: 'BRL', custom_data: {button_location: 'hero'}}); gtag('event', 'begin_checkout', {currency: 'BRL', custom_parameter: 'hero_button', items: [{item_name: 'Réveillon Carneiros 2026', item_category: 'Ingresso'}]});">Comprar</a>
         </div>
     </section>
 
@@ -2071,20 +2077,18 @@
             if (preloader) {
                 const criticalResources = {
                     fonts: false,
-                    heroImage: false,
-                    css: document.readyState === 'complete'
+                    heroImage: false
+                    // Removido: css (não precisa esperar TODO o documento)
                 };
                 
                 let minDisplayTime = 800; // Tempo mínimo de exibição
-                const maxWaitTime = 3000; // Timeout de segurança
+                const maxWaitTime = 4000; // Aumentado para 4s como solicitado
                 const startTime = performance.now();
                 
                 // Detecta carregamento de fontes críticas
                 if ('fonts' in document) {
-                    Promise.all([
-                        document.fonts.load('1em Amagro'),
-                        document.fonts.load('1em SFProDisplay')
-                    ]).then(() => {
+                    // Apenas fonte crítica do Hero
+                    document.fonts.load('700 1em Amagro').then(() => {
                         criticalResources.fonts = true;
                         checkReadyToHide();
                     }).catch(() => {
@@ -2118,15 +2122,8 @@
                     criticalResources.heroImage = true;
                 }
                 
-                // Detecta quando documento está completamente carregado
-                if (document.readyState === 'complete') {
-                    criticalResources.css = true;
-                } else {
-                    window.addEventListener('load', () => {
-                        criticalResources.css = true;
-                        checkReadyToHide();
-                    });
-                }
+                // Removido: não precisa esperar documento completo
+                // Agora só espera fontes + hero image
                 
                 // Função para verificar se pode esconder o preloader
                 function checkReadyToHide() {
