@@ -447,10 +447,20 @@ const VillaMoutonController = {
         // Detecta se está no subdiretório /en/ para ajustar paths
         const basePath = window.location.pathname.includes('/en/') ? '../assets/images/villa-mouton/' : '/assets/images/villa-mouton/';
         
+        // Optimize images - use WebP when supported, JPG fallback
         this.imageMap = {
+            'beleza': basePath + 'beleza.webp',
+            'gastronomia': basePath + 'gastronomia.webp', 
+            'store': basePath + 'store.webp',
+            'suporte': basePath + 'suporte.webp',
+            'default': basePath + 'default.webp'
+        };
+        
+        // Fallback map for browsers without WebP support
+        this.fallbackMap = {
             'beleza': basePath + 'beleza.jpg',
             'gastronomia': basePath + 'gastronomia.jpg',
-            'store': basePath + 'store.jpg',
+            'store': basePath + 'store.jpg', 
             'suporte': basePath + 'suporte.jpg',
             'default': basePath + 'default.jpg'
         };
@@ -498,24 +508,52 @@ const VillaMoutonController = {
         });
     },
 
-    changeImage(newSrc) {
+    async changeImage(newSrc) {
         console.log('🏰 Villa Mouton: Tentando trocar imagem para:', newSrc);
         
         // Transição mais rápida e natural
         this.mainImage.style.transition = 'opacity 150ms ease-out';
         this.mainImage.style.opacity = '0';
         
-        setTimeout(() => {
-            this.mainImage.src = newSrc;
-            this.mainImage.onload = () => {
-                console.log('✅ Villa Mouton: Imagem carregada com sucesso:', newSrc);
+        setTimeout(async () => {
+            // Tenta carregar WebP primeiro
+            try {
+                await this.testImageLoad(newSrc);
+                this.mainImage.src = newSrc;
+                console.log('✅ Villa Mouton: WebP carregado com sucesso:', newSrc);
                 this.mainImage.style.opacity = '1';
-            };
-            this.mainImage.onerror = () => {
-                console.error('❌ Villa Mouton: Falha ao carregar imagem:', newSrc);
-                this.mainImage.style.opacity = '1'; // Mostra o que tinha antes
-            };
+            } catch (error) {
+                // Fallback para JPG
+                const imageKey = Object.keys(this.imageMap).find(key => this.imageMap[key] === newSrc);
+                const fallbackSrc = this.fallbackMap[imageKey];
+                
+                if (fallbackSrc) {
+                    console.log('🔄 Villa Mouton: Tentando fallback JPG:', fallbackSrc);
+                    this.mainImage.src = fallbackSrc;
+                    this.mainImage.onload = () => {
+                        console.log('✅ Villa Mouton: JPG fallback carregado:', fallbackSrc);
+                        this.mainImage.style.opacity = '1';
+                    };
+                    this.mainImage.onerror = () => {
+                        console.error('❌ Villa Mouton: Falha total ao carregar:', fallbackSrc);
+                        this.mainImage.style.opacity = '1';
+                    };
+                } else {
+                    console.error('❌ Villa Mouton: Sem fallback disponível para:', newSrc);
+                    this.mainImage.style.opacity = '1';
+                }
+            }
         }, 150);
+    },
+    
+    // Helper para testar carregamento de imagem
+    testImageLoad(src) {
+        return new Promise((resolve, reject) => {
+            const testImg = new Image();
+            testImg.onload = () => resolve(src);
+            testImg.onerror = () => reject(new Error(`Failed to load: ${src}`));
+            testImg.src = src;
+        });
     }
 };
 

@@ -579,6 +579,10 @@
     <link rel="preload" href="/assets/images/hero/hero-background-768.webp" as="image" type="image/webp" media="(max-width: 768px)">
     <link rel="preload" href="/assets/images/hero/hero-background.webp" as="image" type="image/webp" media="(min-width: 769px) and (max-width: 1440px)">
     <link rel="preload" href="/assets/images/hero/hero-background-high.webp" as="image" type="image/webp" media="(min-width: 1441px)">
+    
+    <!-- Smart preload - All-Inclusive first background image -->
+    <link rel="preload" href="/assets/images/all-inclusive/gastronomia-768.webp" as="image" type="image/webp" media="(max-width: 768px)">
+    <link rel="preload" href="/assets/images/all-inclusive/gastronomia.webp" as="image" type="image/webp" media="(min-width: 769px)">
 
     <!-- CSS Files com carregamento assíncrono -->
     <link rel="preload" href="../css/fonts.css" as="style">
@@ -766,8 +770,13 @@
                 <div class="experiences-grid" id="experiences-carousel">
                     <!-- AURA - 27 DEZ -->
                     <article class="experience-card" data-celebration="aura" data-aos="fade-up" data-aos-delay="200">
-                        <img src="/assets/images/night-celebrations/aura.jpg"
-                            alt="AURA - The invisible dance of energies" decoding="async">
+                        <picture>
+                            <source srcset="/assets/images/night-celebrations/aura-768.webp" 
+                                    media="(max-width: 768px)" type="image/webp">
+                            <source srcset="/assets/images/night-celebrations/aura.webp" type="image/webp">
+                            <img src="/assets/images/night-celebrations/aura.jpg"
+                                alt="AURA - The invisible dance of energies" decoding="async">
+                        </picture>
                         <div class="experience-info">
                             <div class="experience-header">
                                 <h3>AURA</h3>
@@ -924,11 +933,21 @@
             <div class="mouton-beach-images" data-aos="fade-left">
                 <div class="mouton-slideshow">
                     <div class="mouton-slide active">
-                        <img src="/assets/images/mouton/mouton-main.jpg" alt="Mouton Beach Club - Main view"
-                            loading="eager" fetchpriority="high">
+                        <picture>
+                            <source srcset="/assets/images/mouton/mouton-main-768.webp" 
+                                    media="(max-width: 768px)" type="image/webp">
+                            <source srcset="/assets/images/mouton/mouton-main.webp" type="image/webp">
+                            <img src="/assets/images/mouton/mouton-main.jpg" alt="Mouton Beach Club - Main view"
+                                loading="eager" fetchpriority="high">
+                        </picture>
                     </div>
                     <div class="mouton-slide">
-                        <img src="/assets/images/mouton/sunset.jpg" alt="Sunset no Mouton" loading="lazy">
+                        <picture>
+                            <source srcset="/assets/images/mouton/sunset-768.webp" 
+                                    media="(max-width: 768px)" type="image/webp">
+                            <source srcset="/assets/images/mouton/sunset.webp" type="image/webp">
+                            <img src="/assets/images/mouton/sunset.jpg" alt="Sunset no Mouton" loading="lazy">
+                        </picture>
                     </div>
                     <div class="mouton-slide">
                         <img src="/assets/images/mouton/restaurante.jpg" alt="Sunset no Mouton" loading="lazy">
