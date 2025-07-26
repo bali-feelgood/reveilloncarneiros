@@ -799,37 +799,47 @@ const App = {
         // Lazy load de imagens globalmente
         Utils.lazyLoadImages();
 
-        // Inicializa todos os controladores
-        HeaderController.init();
-        NavigationController.init();
+        // Inicializa todos os controladores com tratamento de erro
+        try {
+            HeaderController.init();
+            NavigationController.init();
+        } catch (error) {
+            console.error('❌ Erro na inicialização básica:', error);
+        }
         
         // Novo carousel V2 para mobile
         if (window.innerWidth <= 768) {
             import('./components/ExperiencesCarouselV2.js').then(module => {
                 new module.default('.experiences-wrapper');
+            }).catch(error => {
+                console.warn('⚠️ ExperiencesCarouselV2 failed to load:', error);
             });
         }
         
-        VillaMoutonController.init();
-        
-        // Universal Slideshows - unificados
-        UniversalSlideshow.init({
-            selector: '.all-inclusive-bg .bg-image',
-            type: 'background',
-            interval: CONFIG.slideshows.allInclusive
-        });
-        
-        UniversalSlideshow.init({
-            selector: '.mouton-slide', 
-            type: 'simple',
-            interval: CONFIG.slideshows.moutonBeach
-        });
-        
-        UniversalSlideshow.init({
-            selector: '.destination-slide',
-            type: 'simple', 
-            interval: CONFIG.slideshows.destination
-        });
+        try {
+            VillaMoutonController.init();
+            
+            // Universal Slideshows - unificados
+            UniversalSlideshow.init({
+                selector: '.all-inclusive-bg .bg-image',
+                type: 'background',
+                interval: CONFIG.slideshows.allInclusive
+            });
+            
+            UniversalSlideshow.init({
+                selector: '.mouton-slide', 
+                type: 'simple',
+                interval: CONFIG.slideshows.moutonBeach
+            });
+            
+            UniversalSlideshow.init({
+                selector: '.destination-slide',
+                type: 'simple', 
+                interval: CONFIG.slideshows.destination
+            });
+        } catch (error) {
+            console.error('❌ Erro nos slideshows:', error);
+        }
         
         // Novo Music Carousel V2
         import('./components/MusicCarouselV2.js').then(module => {
@@ -837,11 +847,17 @@ const App = {
             
             // Início suave após 1s
             setTimeout(() => carousel.startAnimation(), 1000);
+        }).catch(error => {
+            console.warn('⚠️ MusicCarouselV2 failed to load:', error);
         });
         
-        WellnessController.init();
-        FAQController.init();
-        NewsletterController.init();
+        try {
+            WellnessController.init();
+            FAQController.init();
+            NewsletterController.init();
+        } catch (error) {
+            console.error('❌ Erro nos controllers finais:', error);
+        }
 
         console.log('✅ Todos os módulos iniciados com sucesso!');
 
