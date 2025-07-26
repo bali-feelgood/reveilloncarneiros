@@ -496,12 +496,17 @@ const VillaMoutonController = {
         });
     },
 
-    async changeImage(newSrc) {
-        this.imageContainer.classList.add('transitioning');
-        await Utils.delay(300);
-        this.mainImage.src = newSrc;
-        await Utils.delay(50);
-        this.imageContainer.classList.remove('transitioning');
+    changeImage(newSrc) {
+        // Transição mais rápida e natural
+        this.mainImage.style.transition = 'opacity 150ms ease-out';
+        this.mainImage.style.opacity = '0';
+        
+        setTimeout(() => {
+            this.mainImage.src = newSrc;
+            this.mainImage.onload = () => {
+                this.mainImage.style.opacity = '1';
+            };
+        }, 150);
     }
 };
 

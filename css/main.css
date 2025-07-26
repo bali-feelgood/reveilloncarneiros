@@ -1318,9 +1318,7 @@
         /* MUDOU: apenas opacity, mais rápido */
     }
 
-    .villa-mouton-images.transitioning img {
-        opacity: 0.2;
-    }
+    /* Removido: transitioning class não é mais usada */
 
     .villa-services-list {
         display: flex;
